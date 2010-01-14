@@ -1,0 +1,14 @@
+# Wireless Driver
+net-wireless/broadcom-sta
+#x11-drivers/nvidia-drivers
+x11-wm/xmonad
+x11-wm/xmonad-contrib
+dev-haskell/x11
+dev-haskell/utf8-string
+dev-util/git
+www-plugins/adobe-flash
+app-emacs/haskell-mode
+media-sound/alsa-driver
+media-sound/alsa-headers
+dev-util/d-feet
+dev-python/django

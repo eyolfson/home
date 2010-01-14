@@ -1,0 +1,7 @@
+[user]
+	name = Jon Eyolfson
+	email = jon@eyolfson.com
+[alias]
+	lol = log --pretty=oneline --abbrev-commit --graph --decorate
+[color]
+	ui = true

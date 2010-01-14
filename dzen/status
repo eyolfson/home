@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+DATE_FORMAT="%a %b %_d %_I:%M %p"
+DZEN_ICONPATH=/home/jon/etc/dzen/icons
+
+fdate() {
+    date +$DATE_FORMAT
+}
+
+while true; do
+    PDATE=$(fdate)
+    PSONG=`mpc | sed -n '1p'`
+    
+    print "^i(${DZEN_ICONPATH}/note.xbm) ${PSONG} ^i(${DZEN_ICONPATH}/clock.xbm) ${PDATE} "
+
+    sleep 1
+done
