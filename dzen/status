@@ -9,9 +9,20 @@ fdate() {
 
 while true; do
     PDATE=$(fdate)
-    PSONG=`mpc | sed -n '1p'`
-    
-    print "^i(${DZEN_ICONPATH}/note.xbm) ${PSONG} ^i(${DZEN_ICONPATH}/clock.xbm) ${PDATE} "
+
+    PSONG=""
+    if [ "`mpc | wc -l`" = "3" ] ; then
+        if [ "`mpc | sed -n 's/\[\([a-z]*\).*/\1/p'`" = "playing" ] ; then
+            PSONG=$PSONG"^i(${DZEN_ICONPATH}/play.xbm) "
+	else
+	    PSONG=$PSONG"^i(${DZEN_ICONPATH}/pause.xbm) "
+	fi
+        PSONG=$PSONG`mpc | sed -n '1p'`
+    else
+	PSONG=$PSONG"^i(${DZEN_ICONPATH}/note.xbm) No Music"
+    fi
+
+    print "${PSONG} ^i(${DZEN_ICONPATH}/clock.xbm) ${PDATE} "
 
     sleep 1
 done
