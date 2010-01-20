@@ -1,28 +1,61 @@
+dzen
+--------------------------------------------------------------------------------
+icons/
+  A collection of icons from sm4tik.
+  [http://koti.24.fi/sm4tik/shared/xbm8x8-0.1.tar.gz]
+
+status
+  Script which displays current status to standard output in dzen format.
+
 emacs
-~/etc/emacs/ -> ~/.emacs.d
+--------------------------------------------------------------------------------
+emacs/
+  -> ~/.emacs.d
 
 git
-~/etc/git/config -> ~/.gitconfig
-
-kernel
-~/etc/kernel/<KERNEL_VERSION>-config -> /usr/src/<KERNEL_VERSION>/.config
+--------------------------------------------------------------------------------
+git/config
+  -> ~/.gitconfig
 
 mpd
-~/etc/mpd/config -> ~/.mpdconf
+--------------------------------------------------------------------------------
+mpd/config
+  -> ~/.mpdconf
 
 portage
-~/etc/portage/make.conf -> /etc/make.conf
-~/etc/portage/package.keywords -> /etc/portage/package.keywords
-~/etc/portage/package.unmask -> /etc/portage/package.unmask
-~/etc/portage/package.use -> /etc/portage/package.use
-~/etc/portage/world -> /var/lib/portage/world
+--------------------------------------------------------------------------------
+portage/make.conf
+  -> /etc/make.conf
+
+portage/package.keywords
+  -> /etc/portage/package.keywords
+
+portage/package.unmask
+  -> /etc/portage/package.unmask
+
+portage/package.use
+  -> /etc/portage/package.use
+
+portage/world
+  -> /var/lib/portage/world
 
 xmonad
-~/etc/xmonad/ -> ~/.xmonad
+--------------------------------------------------------------------------------
+xmonad/
+  -> ~/.xmonad
 
 xorg
-~/etc/xorg/fontlist-fix
-Python script that finds all installed fonts and runs mkfontdir on those that have not been indexed yet, then generates output to be pasted into /etc/X11/xorg.conf. [http://en.gentoo-wiki.com/wiki/X.Org/Fonts]
-~/etc/xorg/resources -> ~/.Xresources
-~/etc/xorg/script -> ~/.xinitrc
-~/etc/xorg/script -> ~/.xsession
+--------------------------------------------------------------------------------
+xorg/fontlist-fix
+  Python script that finds all installed fonts and runs mkfontdir on those that
+  have not been indexed yet, then generates output to be pasted into
+  /etc/X11/xorg.conf. [http://en.gentoo-wiki.com/wiki/X.Org/Fonts]
+
+xorg/resources
+  -> ~/.Xresources
+
+xorg/script
+  -> ~/.xinitrc
+
+xorg/script
+  -> ~/.xsession
