@@ -5,7 +5,7 @@ Xft.hintstyle: hintfull
 Xft.rgba: rgb
 Emacs.font: Inconsolata-9
 Emacs.fontBackend: xft
-Emacs.menuBar: off
+# Emacs.menuBar: off
 Emacs.toolBar: -1
 Emacs.verticalScrollBars: off
 dzen2.font: Inconsolata-10
