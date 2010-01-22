@@ -1,2 +1,2 @@
-/home/jon/etc/dzen/status | /home/jon/bin/dzen2 -ta r -x 780 -h 18 -w 500 -e 'onstart=lower' &
+/home/jon/etc/dzen/status | /home/jon/bin/dzen2 -ta r -xs 1 -x 780 -h 18 -w 500 -e 'onstart=lower' &
 exec gnome-session

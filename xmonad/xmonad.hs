@@ -4,7 +4,7 @@ import XMonad.Config.Gnome
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.Run (spawnPipe, hPutStrLn)
 
-myStatusBar = "/home/jon/bin/dzen2 -e 'onstart=lower' -w 1170 -h 18 -ta l -fg '#ffffff' -bg '#000000'"
+myStatusBar = "/home/jon/bin/dzen2 -xs 1 -e 'onstart=lower' -w 1170 -h 18 -ta l -fg '#ffffff' -bg '#000000'"
 
 main = do
        din <- spawnPipe myStatusBar
