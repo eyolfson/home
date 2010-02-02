@@ -4,5 +4,8 @@ compinit
 promptinit; prompt gentoo
 zstyle ':completion::complete:*' use-cache 1
 
+# LS Colours
+eval `dircolors`
+
 # Aliases
 alias ls='ls --color=auto'
