@@ -29,7 +29,7 @@ myPP h = defaultPP
 
 myKeys conf = [ ("M-f", spawn "firefox")
               , ("M-t", spawn "gnome-terminal")
-              , ("M-e", spawn "emacs")
+              , ("M-g", spawn "emacs")
               , ("M-[", spawn "mpc --no-status prev")
               , ("M-]", spawn "mpc --no-status next")
               , ("M-\\", spawn "mpc --no-status toggle")
