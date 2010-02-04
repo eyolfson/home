@@ -11,7 +11,7 @@ while true; do
     PDATE=$(fdate)
 
     PSONG=""
-    if [ "`mpc | wc -l`" = "3" ] ; then
+    if [ "`mpc 2>/dev/null | wc -l`" = "3" ] ; then
         if [ "`mpc | sed -n 's/\[\([a-z]*\).*/\1/p'`" = "playing" ] ; then
             PSONG=$PSONG"^i(${DZEN_ICONPATH}/play.xbm) "
 	else
@@ -22,7 +22,20 @@ while true; do
 	PSONG=$PSONG"^i(${DZEN_ICONPATH}/note.xbm) No Music"
     fi
 
-    print "${PSONG} ^i(${DZEN_ICONPATH}/clock.xbm) ${PDATE} "
+    BATT_PERCENT=$(echo "100*$(cat /sys/class/power_supply/BAT0/energy_now)/$(cat /sys/class/power_supply/BAT0/energy_full)" | bc)
+    PBATT=""
+    if [ $BATT_PERCENT -ge 50 ]; then
+        PBATT=$PBATT"^i(${DZEN_ICONPATH}/bat_full_02.xbm) ^fg(#8ae234)"
+    else
+        if [ $BATT_PERCENT -ge 30 ]; then
+            PBATT=$PBATT"^i(${DZEN_ICONPATH}/bat_low_02.xbm) ^fg(#fce94f)"
+        else
+            PBATT=$PBATT"^i(${DZEN_ICONPATH}/bat_empty_02.xbm) ^fg(#ef2929)"
+        fi
+    fi
+    PBATT=$PBATT"${BATT_PERCENT}^fg()%"
+
+    print "${PSONG} ${PBATT} ^i(${DZEN_ICONPATH}/clock.xbm) ${PDATE} "
 
     sleep 1
 done
