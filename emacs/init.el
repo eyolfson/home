@@ -10,6 +10,14 @@
         (normal-top-level-add-subdirs-to-load-path)))
 
 ;;------------------------------------------------------------------------------
+;; Custom set variables
+;;------------------------------------------------------------------------------
+(custom-set-variables
+    '(c-basic-offset 4)
+    '(c-insert-tab-function (quote tab-to-tab-stop))
+    '(c-offsets-alist (quote ((substatement . 0) (substatement-open . 0) (substatement-label . 0)))))
+
+;;------------------------------------------------------------------------------
 ;; Color Theme
 ;;
 ;; Color Theme Tango 2

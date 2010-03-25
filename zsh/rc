@@ -9,3 +9,4 @@ eval `dircolors`
 
 # Aliases
 alias ls='ls --color=auto'
+alias javabayes='java -classpath ~/Workspace/JavaBayes-0.346/Classes JavaBayes'
