@@ -87,3 +87,4 @@
 =gnome-base/gnome-menus-2.28.0.1 ~amd64
 =sys-auth/consolekit-0.4.1 ~amd64
 =gnome-extra/gnome-screensaver-2.28.3 ~amd64
+=gnome-extra/gconf-editor-2.28.0 ~amd64
