@@ -3,6 +3,7 @@ app-admin/syslog-ng
 app-arch/file-roller
 app-editors/emacs
 app-emacs/color-theme
+app-emacs/gentoo-syntax
 app-emacs/haskell-mode
 app-emacs/pymacs
 app-emacs/yasnippet
