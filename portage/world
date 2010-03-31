@@ -52,5 +52,6 @@ x11-apps/mesa-progs
 x11-base/xorg-server
 x11-drivers/nvidia-drivers
 x11-terms/gnome-terminal
+x11-themes/vanilla-dmz-aa-xcursors
 x11-wm/xmonad
 x11-wm/xmonad-contrib
