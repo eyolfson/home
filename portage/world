@@ -5,8 +5,10 @@ app-editors/emacs
 app-emacs/color-theme
 app-emacs/gentoo-syntax
 app-emacs/haskell-mode
-app-emacs/pymacs
+app-emacs/python-mode
 app-emacs/yasnippet
+app-misc/screen
+app-office/gnumeric
 app-portage/autounmask
 app-portage/eix
 app-portage/gentoolkit
@@ -14,6 +16,7 @@ app-portage/layman
 app-shells/zsh
 app-shells/zsh-completion
 app-text/evince
+app-text/ispell
 app-text/texlive
 dev-java/sun-jdk
 dev-lang/ghc
@@ -25,6 +28,7 @@ dev-vcs/git
 gnome-base/gdm
 gnome-base/gnome-light
 gnome-extra/gconf-editor
+gnome-extra/gnome-media
 gnome-extra/gnome-power-manager
 gnome-extra/gnome-screensaver
 media-fonts/corefonts
@@ -38,6 +42,7 @@ media-sound/mpd
 media-video/nvclock
 media-video/vlc
 net-im/pidgin
+net-irc/irssi
 net-misc/dhcpcd
 net-wireless/broadcom-sta
 net-wireless/wireless-tools
