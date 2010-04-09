@@ -9,6 +9,11 @@
 # VLC 1.0.5
 =media-video/vlc-1.0.5 ~amd64
 
+# Themes
+=x11-themes/mesmerized-1.0 ~amd64
+=x11-themes/bluecurve-xcursors-0.1.1 ~amd64
+=x11-themes/gnome-colors-common-5.5.1 ~amd64
+
 # Xmonad 0.9.1
 =x11-wm/xmonad-0.9.1 ~amd64
 =x11-wm/xmonad-contrib-0.9.1 ~amd64

@@ -1,11 +1,11 @@
 media-sound/mpd aac flac mp3 ogg vorbis
 media-video/vlc qt4 dvd ffmpeg mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis matroska freetype bidi xv svga gnutls stream vlm httpd cdda vcd cdio live
-net-dns/avahi mdnsresponder-compat
+net-dns/avahi autoipd mdnsresponder-compat
 sys-apps/hal laptop
 x11-libs/cairo cleartype
 
 # LaTeX
-app-text/texlive extra
+app-text/texlive extra graphics publishers science
 app-text/lcdf-typetools kpathsea
 media-libs/freetype kpathsea
 
