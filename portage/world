@@ -32,6 +32,7 @@ gnome-extra/gnome-media
 gnome-extra/gnome-power-manager
 gnome-extra/gnome-screensaver
 gnome-extra/nm-applet
+gnome-extra/xmonad-log-applet
 media-fonts/corefonts
 media-fonts/dejavu
 media-fonts/inconsolata
