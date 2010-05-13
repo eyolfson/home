@@ -22,6 +22,7 @@ dev-java/sun-jdk
 dev-lang/ghc
 dev-libs/boost
 dev-python/django
+dev-util/android-sdk-update-manager
 dev-util/subversion
 dev-vcs/darcs
 dev-vcs/git
@@ -31,6 +32,7 @@ gnome-extra/gconf-editor
 gnome-extra/gnome-media
 gnome-extra/gnome-power-manager
 gnome-extra/gnome-screensaver
+gnome-extra/music-applet
 gnome-extra/nm-applet
 gnome-extra/xmonad-log-applet
 media-fonts/corefonts
@@ -47,12 +49,12 @@ net-im/pidgin
 net-irc/irssi
 net-misc/dhcpcd
 net-wireless/broadcom-sta
-net-wireless/wireless-tools
-net-wireless/wpa_supplicant
 sys-apps/pciutils
 sys-boot/grub
+sys-devel/clang
 sys-kernel/gentoo-sources
 sys-kernel/module-rebuild
+sys-process/atop
 www-client/mozilla-firefox
 www-plugins/adobe-flash
 x11-apps/mesa-progs

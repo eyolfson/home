@@ -2,6 +2,8 @@
 autoload -U compinit promptinit
 compinit
 promptinit; prompt gentoo
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion::complete:*' use-cache 1
 
 # LS Colours
@@ -12,3 +14,4 @@ export PATH="${PATH}:${HOME}/bin"
 
 # Aliases
 alias ls='ls --color=auto'
+alias grep='grep --colour=auto'

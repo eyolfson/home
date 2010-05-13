@@ -1,3 +1,4 @@
+gnome-extra/music-applet mpd libnotify
 media-sound/mpd aac flac mp3 ogg vorbis
 media-video/vlc qt4 dvd ffmpeg mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis matroska freetype bidi xv svga gnutls stream vlm httpd cdda vcd cdio live
 net-dns/avahi autoipd mdnsresponder-compat
@@ -10,6 +11,6 @@ app-text/lcdf-typetools kpathsea
 media-libs/freetype kpathsea
 
 # Gnome 2.28
-=gnome-base/gvfs-1.4.3 gdu
-=sys-fs/udev-149 extras
-=sys-apps/parted-1.9.0 device-mapper
+gnome-base/gvfs gdu
+sys-fs/udev extras
+sys-apps/parted device-mapper
