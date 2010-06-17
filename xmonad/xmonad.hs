@@ -9,6 +9,11 @@ import XMonad.Config.Gnome
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Layout.NoBorders(smartBorders)
 
+--added by jc
+import XMonad.Hooks.SetWMName
+import qualified XMonad.StackSet as W
+import XMonad.Hooks.ManageHelpers
+
 main = withConnection Session $ \ dbus -> do
   getWellKnownName dbus
   xmonad $ gnomeConfig
@@ -17,6 +22,10 @@ main = withConnection Session $ \ dbus -> do
            , workspaces = ["Web", "Term", "Emacs", "IM", "IRC", "Misc", "Pres"]
            , logHook = dynamicLogWithPP $ myPP dbus
            , layoutHook = smartBorders $ layoutHook gnomeConfig 
+
+           -- added by jc
+           , startupHook = startupHook gnomeConfig >> setWMName "LG3D"
+           , manageHook = myManageHooks
            }
            `additionalKeysP` myKeys
 
@@ -77,3 +86,10 @@ getWellKnownName dbus = tryGetName `catchDyn` (\ (DBus.Error _ _) ->
     addArgs namereq [String "org.xmonad.Log", Word32 5]
     sendWithReplyAndBlock dbus namereq 0
     return ()
+
+--added by jc
+myManageHooks = composeAll
+                [ isFullscreen --> doFullFloat
+                ]
+
+

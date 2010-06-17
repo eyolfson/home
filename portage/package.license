@@ -1,2 +1,4 @@
 dev-java/sun-jdk dlj-1.1
 net-wireless/broadcom-sta Broadcom
+app-emulation/virtualbox-bin PUEL
+www-plugins/adobe-flash AdobeFlash-10
