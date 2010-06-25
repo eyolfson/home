@@ -21,11 +21,9 @@ main = withConnection Session $ \ dbus -> do
            , terminal = "gnome-terminal"
            , workspaces = ["Web", "Term", "Emacs", "IM", "IRC", "Misc", "Pres"]
            , logHook = dynamicLogWithPP $ myPP dbus
-           , layoutHook = smartBorders $ layoutHook gnomeConfig 
-
-           -- added by jc
+           , layoutHook = smartBorders $ layoutHook gnomeConfig
            , startupHook = startupHook gnomeConfig >> setWMName "LG3D"
-           , manageHook = myManageHooks
+           , manageHook = manageHook gnomeConfig <+> myManageHook
            }
            `additionalKeysP` myKeys
 
@@ -63,6 +61,10 @@ myKeys = [ ("M-f", spawn "firefox")
          , ("M-\\", spawn "mpc --no-status toggle")
          ]
 
+myManageHook = composeAll
+               [ isFullscreen --> (doF W.focusDown <+> doFullFloat)
+               ]
+
 pangoColor :: String -> String -> String
 pangoColor fg = wrap left right
   where
@@ -86,10 +88,3 @@ getWellKnownName dbus = tryGetName `catchDyn` (\ (DBus.Error _ _) ->
     addArgs namereq [String "org.xmonad.Log", Word32 5]
     sendWithReplyAndBlock dbus namereq 0
     return ()
-
---added by jc
-myManageHooks = composeAll
-                [ isFullscreen --> doFullFloat
-                ]
-
-

@@ -4,6 +4,7 @@ app-arch/file-roller
 app-benchmarks/httperf
 app-editors/emacs
 app-emacs/color-theme
+app-emacs/emacs-daemon
 app-emacs/gentoo-syntax
 app-emacs/haskell-mode
 app-emacs/python-mode
@@ -24,6 +25,7 @@ dev-db/postgresql-server
 dev-java/jdbc-postgresql
 dev-java/jython
 dev-java/jython:0
+dev-java/maven-bin
 dev-java/sun-j2ee
 dev-java/sun-jdk
 dev-lang/ghc
@@ -41,6 +43,7 @@ gnome-extra/gconf-editor
 gnome-extra/gnome-media
 gnome-extra/gnome-power-manager
 gnome-extra/gnome-screensaver
+gnome-extra/indicator-applet
 gnome-extra/music-applet
 gnome-extra/nm-applet
 gnome-extra/xmonad-log-applet
@@ -52,6 +55,7 @@ media-gfx/eog
 media-gfx/scrot
 media-sound/mpc
 media-sound/mpd
+media-video/minitube
 media-video/nvclock
 media-video/vlc
 net-im/pidgin
@@ -64,16 +68,24 @@ sys-devel/clang
 sys-fs/ntfs3g
 sys-kernel/gentoo-sources
 sys-kernel/module-rebuild
+sys-power/pm-utils
 sys-power/powertop
 sys-process/atop
+sys-process/htop
+sys-process/lsof
 www-client/mozilla-firefox
 www-plugins/adobe-flash
+www-plugins/nspluginwrapper
 x11-apps/mesa-progs
 x11-apps/xbacklight
+x11-apps/xlsfonts
 x11-base/xorg-server
 x11-drivers/nvidia-drivers
+x11-misc/dmenu
 x11-terms/gnome-terminal
+x11-terms/rxvt-unicode
 x11-themes/mesmerized
 x11-themes/vanilla-dmz-aa-xcursors
 x11-wm/xmonad
 x11-wm/xmonad-contrib
+xfce-base/xfce4-meta

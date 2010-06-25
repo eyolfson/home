@@ -6,6 +6,8 @@ app-emulation/virtualbox-modules ~amd64
 =dev-util/android-sdk-update-manager-5 ~amd64
 =sys-devel/clang-2.7 ~amd64
 =sys-devel/llvm-2.7 ~amd64
+=gnome-extra/indicator-applet-0.3.6 ~amd64
+=dev-libs/libindicator-0.3.6 ~amd64
 
 # git 1.7.1
 =dev-vcs/git-1.7.1-r1 ~amd64
