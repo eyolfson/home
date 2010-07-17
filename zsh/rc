@@ -1,8 +1,16 @@
-# Gentoo suggestions
-autoload -U compinit promptinit
+# Completion
+autoload -U compinit
 compinit
-promptinit; prompt gentoo
 
+# Correction
+setopt correctall
+
+# Prompt
+autoload -U promptinit
+promptinit
+prompt gentoo
+
+# Better TAB Completion
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion::complete:*' use-cache 1
 

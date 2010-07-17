@@ -9,6 +9,11 @@ app-emulation/virtualbox-modules ~amd64
 =gnome-extra/indicator-applet-0.3.6 ~amd64
 =dev-libs/libindicator-0.3.6 ~amd64
 
+=www-client/mozilla-firefox-3.6.6 ~amd64
+=net-libs/xulrunner-1.9.2.6 ~amd64
+
+=x11-misc/xtrlock-2.0-r2 ~amd64
+
 # git 1.7.1
 =dev-vcs/git-1.7.1-r1 ~amd64
 

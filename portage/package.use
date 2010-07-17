@@ -1,17 +1,17 @@
 gnome-extra/music-applet mpd libnotify
 media-sound/mpd aac flac mp3 ogg vorbis
 media-video/vlc qt4 dvd ffmpeg mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis matroska freetype bidi xv svga gnutls stream vlm httpd cdda vcd cdio live
-net-dns/avahi autoipd mdnsresponder-compat
-sys-apps/hal laptop
 x11-libs/cairo cleartype
-dev-db/postgresql-server python
+x11-terms/rxvt-unicode xterm-color
+
+media-video/nvclock -gtk
+
+x11-misc/slim branding
+xfce-base/xfce-utils -lock
 
 # LaTeX
-app-text/texlive extra graphics publishers science
+app-text/texlive extra graphics publishers science -X
 app-text/lcdf-typetools kpathsea
 media-libs/freetype kpathsea
 
-# Gnome 2.28
-gnome-base/gvfs gdu
 sys-fs/udev extras
-sys-apps/parted device-mapper

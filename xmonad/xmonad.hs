@@ -1,90 +1,68 @@
-import Control.OldException
 import Control.Monad
-import DBus
-import DBus.Connection
-import DBus.Message
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Config.Gnome
 import XMonad.Util.EZConfig (additionalKeysP)
-import XMonad.Layout.NoBorders(smartBorders)
-
---added by jc
+import XMonad.Layout.NoBorders (smartBorders)
+import XMonad.Util.Run (spawnPipe, hPutStrLn)
 import XMonad.Hooks.SetWMName
 import qualified XMonad.StackSet as W
 import XMonad.Hooks.ManageHelpers
+import XMonad.Util.Loggers
+import XMonad.Config.Xfce
 
-main = withConnection Session $ \ dbus -> do
-  getWellKnownName dbus
-  xmonad $ gnomeConfig
+iconize :: String -> String
+iconize s = "^i(/home/jon/pixmaps/" ++ s ++ ".xpm)"
+
+iconizeVisible :: String -> String
+iconizeVisible s = iconize (s ++ "-visible")
+
+iconizeEmpty :: String -> String
+iconizeEmpty s = iconize (s ++ "-empty")
+
+myStatusBar = "/home/jon/bin/dzen2 -ta l -xs 1 -h 24 -e 'onstart-lower'"
+
+main = do
+  --spawn "/usr/bin/tail -f /home/jon/.sysbar/pipe | /home/jon/bin/dmplex | /home/jon/bin/dzen2 -ta l -xs 1 -h 24"
+  --statusBar <- spawnPipe myStatusBar
+  xmonad $ xfceConfig
            { modMask = mod4Mask
-           , terminal = "gnome-terminal"
-           , workspaces = ["Web", "Term", "Emacs", "IM", "IRC", "Misc", "Pres"]
-           , logHook = dynamicLogWithPP $ myPP dbus
+           , terminal = "urxvt"
+           , workspaces = ["web", "term", "emacs", "im", "irc", "vid", "doc", "misc"]
+           , logHook = dynamicLogWithPP $ myPP
            , layoutHook = smartBorders $ layoutHook gnomeConfig
            , startupHook = startupHook gnomeConfig >> setWMName "LG3D"
            , manageHook = manageHook gnomeConfig <+> myManageHook
            }
            `additionalKeysP` myKeys
 
-myPP dbus = defaultPP
-              { ppCurrent  = pangoColor "#ad7fa8" . wrap "" ""
-              --, ppHiddenNoWindows = wrap "" ""
-              --, ppSep = ""
-              --, ppWsSep = ""
-              --, ppTitle    = pangoColor "#729fcf" . shorten 50
+myPP = defaultPP
+              { ppSep = ""
+              , ppWsSep = ""
+              , ppCurrent  = wrap (iconize "left-bracket") (iconize "right-bracket") . iconize
+              , ppVisible  = wrap (iconizeVisible "left-bracket") (iconizeVisible "right-bracket") . iconize
+              , ppHidden   = wrap "^p(+4)" "^p(+8)" . iconize
+              , ppHiddenNoWindows = wrap "^p(+4)" "^p(+8)" . iconizeEmpty
               , ppTitle = \x -> ""
-              , ppVisible  = pangoColor "#729fcf" . wrap "" ""
-              , ppHidden   = wrap "" ""
-              , ppUrgent   = pangoColor "#ef2929"
-              , ppOutput   = \ str -> do
-                  let str'  = "<span font=\"monospace\">" ++ str ++ "</span>"
-                      str'' = sanitize str'
-                  msg <- newSignal "/org/xmonad/Log" "org.xmonad.Log" "Update"
-                  addArgs msg [String str'']
-                  -- If the send fails, ignore it.
-                  send dbus msg 0 `catchDyn`
-                    (\ (DBus.Error _name _msg) ->
-                      return 0)
-                  return ()
+              , ppOutput = writeFile "/home/jon/.sysbar/pipe" . ("1 " ++) .  (++ "\n")                  
+              --, ppOutput   = writeFile "/home/jon/.sysbar/pipe" . ("1 " ++)
+              --, ppOutput   = hPutStrLn statusBar
               }
 
 myKeys = [ ("M-f", spawn "firefox")
-         , ("M-x", spawn "gnome-terminal")
-         , ("M-g", spawn "emacs")
+         , ("M-x", spawn "urxvt")
+         , ("M-g", spawn "emacsclient -c")
          , ("M-d", spawn "pidgin")
-         , ("M-s", spawn "nautilus ~")
+         --, ("M-s", spawn "nautilus ~")
          , ("M-a", spawn "vlc")
          , ("M-z", spawn "evince")
          , ("M-[", spawn "mpc --no-status prev")
          , ("M-]", spawn "mpc --no-status next")
          , ("M-\\", spawn "mpc --no-status toggle")
+         --, ("M-p", spawn "xfrun4")
+         --, ("M-Q", spawn "xfce4-session-logout")
          ]
 
 myManageHook = composeAll
                [ isFullscreen --> (doF W.focusDown <+> doFullFloat)
                ]
-
-pangoColor :: String -> String -> String
-pangoColor fg = wrap left right
-  where
-    left  = "<span foreground=\"" ++ fg ++ "\">"
-    right = "</span>"
-
-sanitize :: String -> String
-sanitize [] = []
-sanitize (x:rest) | fromEnum x > 127 = "&#" ++ show (fromEnum x) ++ "; " ++
-                                       sanitize rest
-                  | otherwise        = x : sanitize rest
-
--- This retry is really awkward, but sometimes DBus won't let us get our
--- name unless we retry a couple times.
-getWellKnownName :: Connection -> IO ()
-getWellKnownName dbus = tryGetName `catchDyn` (\ (DBus.Error _ _) ->
-                                                getWellKnownName dbus)
-  where
-  tryGetName = do
-    namereq <- newMethodCall serviceDBus pathDBus interfaceDBus "RequestName"
-    addArgs namereq [String "org.xmonad.Log", Word32 5]
-    sendWithReplyAndBlock dbus namereq 0
-    return ()
