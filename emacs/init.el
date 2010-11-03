@@ -1,4 +1,5 @@
 (setq make-backup-files nil)
+(setq-default indent-tabs-mode nil)
 (setq x-select-enable-clipboard t)
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
@@ -17,9 +18,14 @@
 ;; Custom set variables
 ;;------------------------------------------------------------------------------
 (custom-set-variables
-    '(c-basic-offset 4)
+    '(c-basic-offset 2)
     '(c-insert-tab-function (quote tab-to-tab-stop))
     '(c-offsets-alist (quote ((substatement . 0) (substatement-open . 0) (substatement-label . 0)))))
+
+;;------------------------------------------------------------------------------
+;; ECB
+;;------------------------------------------------------------------------------
+(require 'ecb)
 
 ;;------------------------------------------------------------------------------
 ;; Color Theme

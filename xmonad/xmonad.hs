@@ -20,14 +20,14 @@ iconizeVisible s = iconize (s ++ "-visible")
 iconizeEmpty :: String -> String
 iconizeEmpty s = iconize (s ++ "-empty")
 
-myStatusBar = "/home/jon/bin/dzen2 -ta l -xs 1 -h 24 -e 'onstart-lower'"
+logoWrap :: String -> String
+-- logoWrap s = "" ++ (iconize "gentoo") ++ "^p(+4)" ++ s ++ "^p(+12)"
+logoWrap s = "^p(+4)" ++ s ++ "^p(+12)"
 
 main = do
-  --spawn "/usr/bin/tail -f /home/jon/.sysbar/pipe | /home/jon/bin/dmplex | /home/jon/bin/dzen2 -ta l -xs 1 -h 24"
-  --statusBar <- spawnPipe myStatusBar
   xmonad $ xfceConfig
            { modMask = mod4Mask
-           , terminal = "urxvt"
+           , terminal = "urxvtc"
            , workspaces = ["web", "term", "emacs", "im", "irc", "vid", "doc", "misc"]
            , logHook = dynamicLogWithPP $ myPP
            , layoutHook = smartBorders $ layoutHook gnomeConfig
@@ -43,22 +43,31 @@ myPP = defaultPP
               , ppVisible  = wrap (iconizeVisible "left-bracket") (iconizeVisible "right-bracket") . iconize
               , ppHidden   = wrap "^p(+4)" "^p(+8)" . iconize
               , ppHiddenNoWindows = wrap "^p(+4)" "^p(+8)" . iconizeEmpty
+              , ppLayout = logoWrap . (\x -> case x of
+                               "Tall" -> (iconize "layout-tall")
+                               "Mirror Tall" -> (iconize "layout-mirror-tall")
+                               "Full" -> (iconize "layout-full")
+                           )
               , ppTitle = \x -> ""
-              , ppOutput = writeFile "/home/jon/.sysbar/pipe" . ("1 " ++) .  (++ "\n")                  
-              --, ppOutput   = writeFile "/home/jon/.sysbar/pipe" . ("1 " ++)
-              --, ppOutput   = hPutStrLn statusBar
+              , ppOrder = reverse                  
+              , ppOutput = writeFile "/home/jon/.sysbar/pipe" . ("1 " ++) .  (++ "\n")
               }
 
 myKeys = [ ("M-f", spawn "firefox")
-         , ("M-x", spawn "urxvt")
+         , ("M-x", spawn "urxvtc")
          , ("M-g", spawn "emacsclient -c")
          , ("M-d", spawn "pidgin")
          --, ("M-s", spawn "nautilus ~")
          , ("M-a", spawn "vlc")
          , ("M-z", spawn "evince")
-         , ("M-[", spawn "mpc --no-status prev")
-         , ("M-]", spawn "mpc --no-status next")
-         , ("M-\\", spawn "mpc --no-status toggle")
+         , ("<XF86MonBrightnessDown>", spawn "nvclock -S -5 &> /dev/null")
+         , ("<XF86MonBrightnessUp>", spawn "nvclock -S +5 &> /dev/null")                                
+         , ("<XF86AudioPrev>", spawn "mpc --no-status prev")
+         , ("<XF86AudioPlay>", spawn "mpc --no-status toggle")
+         , ("<XF86AudioNext>", spawn "mpc --no-status next")
+         , ("<XF86AudioMute>", spawn "amixer set Master toggle &> /dev/null")
+         , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%- &> /dev/null")
+         , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 5%+ &> /dev/null")  
          --, ("M-p", spawn "xfrun4")
          --, ("M-Q", spawn "xfce4-session-logout")
          ]

@@ -19,9 +19,19 @@ eval `dircolors`
 
 # Variables
 export PATH="${PATH}:${HOME}/bin"
+export PIN_HOME=${HOME}/src/pin-2.8-33586-gcc.3.4.6-ia32_intel64-linux
 export GERONIMO_HOME=$HOME/workspace/geronimo-jetty7-minimal-2.2
-export CLASSPATH=/usr/share/jdbc-postgresql/lib/jdbc-postgresql.jar:/home/jon/workspace/geronimo-jetty7-minimal-2.2/repository/org/apache/geronimo/framework/geronimo-management/2.2/geronimo-management-2.2.jar:$GERONIMO_HOME/repository/org/apache/geronimo/specs/geronimo-j2ee-management_1.1_spec/1.0.1/geronimo-j2ee-management_1.1_spec-1.0.1.jar:/home/jon/workspace/geronimo-jetty7-minimal-2.2/repository/org/apache/geronimo/framework/geronimo-core/2.2/geronimo-core-2.2.jar:/home/jon/workspace/geronimo-jetty7-minimal-2.2/lib/geronimo-system-2.2.jar:/home/jon/workspace/geronimo-jetty7-minimal-2.2/lib/geronimo-kernel-2.2.jar
-export JAVA_OPTS=-Djava.security.manager
+export CLASSPATH=.
+export CLASSPATH=$CLASSPATH:$HOME/workspace/ece251-a2-solns/classes
+
+export GROFF_NO_SGR=
+export LESS_TERMCAP_mb=$'\E[01;31m'    # Begin Blinking
+export LESS_TERMCAP_md=$'\E[01;31m'    # Begin Bold
+export LESS_TERMCAP_me=$'\E[0m'        # End Mode
+export LESS_TERMCAP_se=$'\E[0m'        # End Standout-Mode
+export LESS_TERMCAP_so=$'\E[01;47;34m' # Begin Standout-Mode
+export LESS_TERMCAP_ue=$'\E[0m'        # End Underline
+export LESS_TERMCAP_us=$'\E[01;32m'    # Begin Underline
 
 # Aliases
 alias ls='ls --color=auto'
