@@ -2,8 +2,11 @@
 autoload -U compinit
 compinit
 
-# Correction
-setopt correctall
+# Options
+setopt extendedglob
+
+# Emacs keybindings
+bindkey -e
 
 # Prompt
 autoload -U promptinit
@@ -24,19 +27,20 @@ export GERONIMO_HOME=$HOME/workspace/geronimo-jetty7-minimal-2.2
 export CLASSPATH=.
 export CLASSPATH=$CLASSPATH:$HOME/workspace/ece251-a2-solns/classes
 
-export GROFF_NO_SGR=
-export LESS_TERMCAP_mb=$'\E[01;31m'    # Begin Blinking
-export LESS_TERMCAP_md=$'\E[01;31m'    # Begin Bold
-export LESS_TERMCAP_me=$'\E[0m'        # End Mode
-export LESS_TERMCAP_se=$'\E[0m'        # End Standout-Mode
-export LESS_TERMCAP_so=$'\E[01;47;34m' # Begin Standout-Mode
-export LESS_TERMCAP_ue=$'\E[0m'        # End Underline
-export LESS_TERMCAP_us=$'\E[01;32m'    # Begin Underline
+#export GROFF_NO_SGR=
+#export LESS_TERMCAP_mb=$'\E[01;31m'    # Begin Blinking
+#export LESS_TERMCAP_md=$'\E[01;31m'    # Begin Bold
+#export LESS_TERMCAP_me=$'\E[0m'        # End Mode
+#export LESS_TERMCAP_se=$'\E[0m'        # End Standout-Mode
+#export LESS_TERMCAP_so=$'\E[01;47;34m' # Begin Standout-Mode
+#export LESS_TERMCAP_ue=$'\E[0m'        # End Underline
+#export LESS_TERMCAP_us=$'\E[01;32m'    # Begin Underline
+
+# History
+HISTFILE=~/.zshhist
+HISTSIZE=1000
+SAVEHIST=1000
 
 # Aliases
 alias ls='ls --color=auto'
 alias grep='grep --colour=auto'
-
-HISTSIZE=1000
-HISTFILE=~/.zshhist
-SAVEHIST=1000
