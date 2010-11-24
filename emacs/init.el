@@ -18,7 +18,7 @@
 ;; Custom set variables
 ;;------------------------------------------------------------------------------
 (custom-set-variables
-    '(c-basic-offset 2)
+    '(c-basic-offset 4)
     '(c-insert-tab-function (quote tab-to-tab-stop))
     '(c-offsets-alist (quote ((substatement . 0) (substatement-open . 0) (substatement-label . 0)))))
 

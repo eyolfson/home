@@ -24,8 +24,8 @@ eval `dircolors`
 export PATH="${PATH}:${HOME}/bin"
 export PIN_HOME=${HOME}/src/pin-2.8-33586-gcc.3.4.6-ia32_intel64-linux
 export GERONIMO_HOME=$HOME/workspace/geronimo-jetty7-minimal-2.2
-export CLASSPATH=.
-export CLASSPATH=$CLASSPATH:$HOME/workspace/ece251-a2-solns/classes
+export CLASSPATH=$HOME/lib/java/antlr-3.2.jar
+#export CLASSPATH=$CLASSPATH:$HOME/workspace/ece251-a2-solns/classes
 
 #export GROFF_NO_SGR=
 #export LESS_TERMCAP_mb=$'\E[01;31m'    # Begin Blinking

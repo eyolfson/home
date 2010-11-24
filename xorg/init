@@ -1,5 +1,5 @@
 xrdb -merge ~/.Xresources
-tail -f ~/.sysbar/pipe | ~/bin/dmplex | ~/bin/dzen2 -ta l -xs 1 -h 24 &
+tail -f ~/.sysbar/pipe | ~/bin/d2mux | ~/bin/dzen2 -ta l -xs 1 -h 24 &
 /home/jon/bin/sysclock &
 urxvtd -q -o -f
 exec ck-launch-session startxfce4

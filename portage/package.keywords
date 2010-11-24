@@ -2,6 +2,7 @@
 =sys-apps/baselayout-2.0.1-r1 ~amd64
 =sys-apps/openrc-0.6.4 ~amd64
 =net-misc/dhcpcd-5.2.8 ~amd64
+=x11-misc/xtrlock-2.0-r3 ~amd64
 
 # Kernel and firmware
 =sys-kernel/gentoo-sources-2.6.35-r12 ~amd64

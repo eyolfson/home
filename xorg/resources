@@ -1,13 +1,13 @@
-Emacs.font: Bitstream Vera Sans Mono-7
+Emacs.font: Bitstream Vera Sans Mono-6
 Emacs.fontBackend: xft
 
-dzen2.font: Bitstream Vera Sans Mono-7:bold
+dzen2.font: Bitstream Vera Sans Mono-6:bold
 dzen2.foreground: white
 dzen2.background: black
 
 urxvt.foreground: white
 urxvt.background: black
-urxvt.font: xft:Bitstream Vera Sans Mono-7
+urxvt.font: xft:Bitstream Vera Sans Mono-6
 urxvt.scrollBar: false
 urxvt.secondaryScroll: true
 urxvt.scrollTtyKeypress: true
