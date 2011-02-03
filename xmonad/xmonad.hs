@@ -50,7 +50,7 @@ myPP = defaultPP
                            )
               , ppTitle = \x -> ""
               , ppOrder = reverse                  
-              , ppOutput = writeFile "/home/jon/.sysbar/pipe" . ("1 " ++) .  (++ "\n")
+              , ppOutput = writeFile "/home/jon/.sysbar/pipe" . ("1 " ++) . (++ "\n")
               }
 
 myKeys = [ ("M-f", spawn "firefox")

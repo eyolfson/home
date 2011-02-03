@@ -1,1 +1,4 @@
 >sys-kernel/gentoo-sources-2.6.35-r12
+>=dev-db/postgresql-docs-8.5
+>=dev-db/postgresql-base-8.5
+>=dev-db/postgresql-server-8.5

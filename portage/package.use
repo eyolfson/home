@@ -5,6 +5,7 @@ x11-libs/cairo cleartype
 x11-terms/rxvt-unicode xterm-color
 dev-lang/python sqlite
 xfce-base/xfce-utils -lock
+net-misc/wicd -pm-utils
 
 # LaTeX
 app-text/texlive extra graphics publishers science -X
@@ -17,3 +18,9 @@ sys-fs/udev extras
 sys-devel/clang system-cxx-headers
 
 www-plugins/adobe-flash nspluginwrapper
+dev-db/sqlite extensions
+media-video/ffmpeg threads
+dev-vcs/git subversion
+dev-vcs/subversion -dso
+dev-python/django postgres
+www-client/chromium -gecko-mediaplayer
