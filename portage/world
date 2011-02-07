@@ -9,6 +9,7 @@ app-emacs/haskell-mode
 app-emacs/python-mode
 app-emacs/yasnippet
 app-misc/screen
+app-office/abiword
 app-office/gnumeric
 app-portage/autounmask
 app-portage/eix

@@ -1,3 +1,5 @@
+fpath=($fpath $HOME/etc/zsh/functions/Prompts)
+
 # Completion
 autoload -U compinit
 compinit
@@ -9,8 +11,7 @@ setopt extendedglob
 bindkey -e
 
 # Prompt
-autoload -U promptinit
-promptinit
+autoload -Uz promptinit; promptinit
 prompt gentoo
 
 # Better TAB Completion
