@@ -8,9 +8,6 @@ import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Util.EZConfig (additionalKeysP)
 import qualified XMonad.StackSet as S
 
-import Control.Monad (liftM)
-import List (elemIndex)
-
 iconize :: String -> String
 iconize s = "^i(/home/jon/pixmaps/" ++ s ++ ".xpm)"
 
@@ -61,9 +58,11 @@ myManageHook = composeAll
 
 myLogHook = do
     ws <- gets windowset
+    let sl = S.screens ws
+    let m = zip (map (S.tag . S.workspace) sl) (map S.screen sl)
     dynamicLogWithPP $ defaultPP
-                       { ppCurrent         = \x -> wrap (iconize "left-bracket") (iconize "right-bracket" ++ displayNumber (lookupScreen ws x)) $ iconize x
-                       , ppVisible         = \x -> wrap "^p(+4)" ("^p(+4)" ++ displayNumber (lookupScreen ws x)) $ iconize x
+                       { ppCurrent         = \x -> wrap (iconize "left-bracket") (iconize "right-bracket" ++ displayNumber (lookup x m)) $ iconize x
+                       , ppVisible         = \x -> wrap "^p(+4)" ("^p(+4)" ++ displayNumber (lookup x m)) $ iconize x
                        , ppHidden          = wrap "^p(+4)" "^p(+8)" . iconize
                        , ppHiddenNoWindows = wrap "^p(+4)" "^p(+8)" . iconizeEmpty
                        , ppUrgent          = const ""
@@ -82,10 +81,3 @@ myLogHook = do
 displayNumber :: Maybe ScreenId -> String
 displayNumber m = case m of Nothing -> "^p(+4)"
                             Just n -> iconize ("screen-" ++ show ((\(S x) -> x) n + 1))
-
-lookupScreen :: WindowSet -> WorkspaceId -> Maybe ScreenId
-lookupScreen s t 
-    | null $ S.visible s                                   = Nothing
-    | t == (S.tag . S.workspace . S.current) s             = Just $ (S.screen . S.current) s
-    | otherwise  = ((map (S.screen) (S.visible s)) !!) `liftM`  i 
-    where i = elemIndex t (map (S.tag . S.workspace) (S.visible s))
