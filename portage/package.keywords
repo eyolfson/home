@@ -12,6 +12,8 @@
 =app-emacs/dropdown-list-20090814-r1 ~amd64
 
 # Xmonad 0.9
+=dev-haskell/hslogger-1.0.7 ~amd64
+=dev-haskell/missingh-1.1.0.3 ~amd64
 =x11-wm/xmonad-0.9 ~amd64
 =x11-wm/xmonad-contrib-0.9 ~amd64
 

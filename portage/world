@@ -21,6 +21,7 @@ app-text/evince
 app-text/ispell
 app-text/texlive
 dev-db/postgresql-server
+dev-haskell/missingh
 dev-java/sun-jdk
 dev-libs/boost
 dev-python/argparse

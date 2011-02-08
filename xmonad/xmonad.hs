@@ -8,19 +8,10 @@ import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Util.EZConfig (additionalKeysP)
 import qualified XMonad.StackSet as S
 
-iconize :: String -> String
-iconize s = "^i(/home/jon/pixmaps/" ++ s ++ ".xpm)"
+import Char (toLower)
+import Data.String.Utils (replace)
 
-iconizeVisible :: String -> String
-iconizeVisible s = iconize (s ++ "-visible")
-
-iconizeEmpty :: String -> String
-iconizeEmpty s = iconize (s ++ "-empty")
-
-logoWrap :: String -> String
--- logoWrap s = "" ++ (iconize "gentoo") ++ "^p(+4)" ++ s ++ "^p(+12)"
-logoWrap s = "^p(+4)" ++ s ++ "^p(+12)"
-
+main :: IO ()
 main = do
     xmonad $ xfceConfig
              { modMask = mod4Mask
@@ -37,11 +28,8 @@ myKeys = [ ("M-f", spawn "firefox")
          , ("M-x", spawn "urxvtc")
          , ("M-g", spawn "emacsclient -c")
          , ("M-d", spawn "pidgin")
-         --, ("M-s", spawn "nautilus ~")
          , ("M-a", spawn "vlc")
          , ("M-z", spawn "evince")
-         --, ("<XF86MonBrightnessDown>", spawn "nvclock -S -5 &> /dev/null")
-         --, ("<XF86MonBrightnessUp>", spawn "nvclock -S +5 &> /dev/null")                          
          , ("<XF86AudioPrev>", spawn "mpc --no-status prev")
          , ("<XF86AudioPlay>", spawn "mpc --no-status toggle")
          , ("<XF86AudioNext>", spawn "mpc --no-status next")
@@ -61,23 +49,47 @@ myLogHook = do
     let sl = S.screens ws
     let m = zip (map (S.tag . S.workspace) sl) (map S.screen sl)
     dynamicLogWithPP $ defaultPP
-                       { ppCurrent         = \x -> wrap (iconize "left-bracket") (iconize "right-bracket" ++ displayNumber (lookup x m)) $ iconize x
-                       , ppVisible         = \x -> wrap "^p(+4)" ("^p(+4)" ++ displayNumber (lookup x m)) $ iconize x
-                       , ppHidden          = wrap "^p(+4)" "^p(+8)" . iconize
-                       , ppHiddenNoWindows = wrap "^p(+4)" "^p(+8)" . iconizeEmpty
+                       { ppCurrent         = myPPCurrent m
+                       , ppVisible         = myPPVisible m
+                       , ppHidden          = myPPHidden
+                       , ppHiddenNoWindows = myPPHidden . (++ "-empty")
                        , ppUrgent          = const ""
                        , ppSep             = ""
                        , ppWsSep           = ""
                        , ppTitle           = const ""
-                       , ppLayout          = logoWrap . (\x -> case x of
-                                                            "Tall" -> (iconize "layout-tall")
-                                                            "Mirror Tall" -> (iconize "layout-mirror-tall")
-                                                            "Full" -> (iconize "layout-full")
-                                                        )
+                       , ppLayout          = myPPLayout
                        , ppOrder           = reverse
-                       , ppOutput          = writeFile "/home/jon/.sysbar/pipe" . ("1 " ++) . (++ "\n")
+                       , ppOutput          = writeFile pipeFile . wrap "1 " "\n"
                        }
+      where myPPCurrent m t = activeWorkspace t ++ (iconScreen $ lookup t m)
+            myPPVisible m t = inactiveWorkspace t ++ (iconScreen $ lookup t m)
+            myPPHidden = (++ screenPad) . inactiveWorkspace
+            myPPLayout = wrap "^p(+4)" "^p(+12)" . iconLayout
 
-displayNumber :: Maybe ScreenId -> String
-displayNumber m = case m of Nothing -> "^p(+4)"
-                            Just n -> iconize ("screen-" ++ show ((\(S x) -> x) n + 1))
+-- My Log Hook Settings and Helpers
+pipeFile :: String
+pipeFile = "/home/jon/.sysbar/pipe"
+
+iconWrap :: String -> String
+iconWrap = wrap "^i(/home/jon/pixmaps/" ".xpm)"
+
+bracketPad :: String
+bracketPad = "^p(+4)"
+
+screenPad :: String
+screenPad = "^p(+4)"
+
+activeWorkspace :: String -> String
+activeWorkspace = wrap lb rb . iconWrap
+  where lb = iconWrap "left-bracket"
+        rb = iconWrap "right-bracket"
+
+inactiveWorkspace :: String -> String
+inactiveWorkspace = wrap bracketPad bracketPad . iconWrap
+
+iconLayout :: String -> String
+iconLayout = iconWrap . ("layout-" ++) . replace " " "-" . map toLower
+
+iconScreen :: Maybe ScreenId -> String
+iconScreen Nothing = "^p(+4)"
+iconScreen (Just (S s)) = iconWrap $ ("screen-" ++) . show $ s + 1
