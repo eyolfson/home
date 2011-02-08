@@ -8,11 +8,12 @@ import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Util.EZConfig (additionalKeysP)
 import qualified XMonad.StackSet as S
 
-import Char (toLower)
+import Control.Arrow ((&&&))
+import Data.Char (toLower)
 import Data.String.Utils (replace)
 
 main :: IO ()
-main = do
+main =
     xmonad $ xfceConfig
              { modMask = mod4Mask
              , terminal = "urxvtc"
@@ -46,8 +47,8 @@ myManageHook = composeAll
 
 myLogHook = do
     ws <- gets windowset
-    let sl = S.screens ws
-    let m = zip (map (S.tag . S.workspace) sl) (map S.screen sl)
+    let sl = if null $ S.visible ws then [] else S.screens ws
+    let m = map ((S.tag . S.workspace) &&& S.screen) sl
     dynamicLogWithPP $ defaultPP
                        { ppCurrent         = myPPCurrent m
                        , ppVisible         = myPPVisible m
@@ -61,17 +62,17 @@ myLogHook = do
                        , ppOrder           = reverse
                        , ppOutput          = writeFile pipeFile . wrap "1 " "\n"
                        }
-      where myPPCurrent m t = activeWorkspace t ++ (iconScreen $ lookup t m)
-            myPPVisible m t = inactiveWorkspace t ++ (iconScreen $ lookup t m)
+      where myPPCurrent m t = activeWorkspace t ++ iconScreen (lookup t m)
+            myPPVisible m t = inactiveWorkspace t ++ iconScreen (lookup t m)
             myPPHidden = (++ screenPad) . inactiveWorkspace
             myPPLayout = wrap "^p(+4)" "^p(+12)" . iconLayout
 
 -- My Log Hook Settings and Helpers
 pipeFile :: String
-pipeFile = "/home/jon/.sysbar/pipe"
+pipeFile = "/home/jon/.dmplex/pipe"
 
 iconWrap :: String -> String
-iconWrap = wrap "^i(/home/jon/pixmaps/" ".xpm)"
+iconWrap = wrap "^i(/home/jon/etc/dzen/pixmaps/" ".xpm)"
 
 bracketPad :: String
 bracketPad = "^p(+4)"
