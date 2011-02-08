@@ -1,22 +1,15 @@
-import Control.Monad (liftM)
-import Control.Monad.State.Class (gets)
-import XMonad.Core (windowset)
 import XMonad
-import XMonad.Util.EZConfig (additionalKeysP)
-import XMonad.Layout.NoBorders (smartBorders)
-import XMonad.Util.Run (spawnPipe, hPutStrLn)
-import XMonad.Hooks.SetWMName
-import qualified XMonad.StackSet as S
-import XMonad.Hooks.ManageHelpers
-import XMonad.Util.Loggers
+import XMonad.Core (windowset)
 import XMonad.Config.Xfce (xfceConfig)
-import List (elemIndex, intersperse)
-import Data.Maybe (isJust, catMaybes)
-import XMonad.Util.WorkspaceCompare (WorkspaceSort, getSortByIndex)
-import XMonad.Hooks.DynamicLog --(wrap, dynamicLogWithPP, defaultPP)
-import XMonad.Hooks.UrgencyHook (readUrgents)
-import XMonad.Util.NamedWindows (getName)
-import XMonad.Util.Font (encodeOutput)
+import XMonad.Hooks.DynamicLog (PP(..), defaultPP, dynamicLogWithPP, wrap)
+import XMonad.Hooks.ManageHelpers (doFullFloat, isFullscreen)
+import XMonad.Hooks.SetWMName (setWMName)
+import XMonad.Layout.NoBorders (smartBorders)
+import XMonad.Util.EZConfig (additionalKeysP)
+import qualified XMonad.StackSet as S
+
+import Control.Monad (liftM)
+import List (elemIndex)
 
 iconize :: String -> String
 iconize s = "^i(/home/jon/pixmaps/" ++ s ++ ".xpm)"
@@ -32,17 +25,16 @@ logoWrap :: String -> String
 logoWrap s = "^p(+4)" ++ s ++ "^p(+12)"
 
 main = do
-  xmonad $ xfceConfig
-           { modMask = mod4Mask
-           , terminal = "urxvtc"
-           , workspaces = ["web", "term", "emacs", "im", "irc", "vid", "doc", "misc"]
-           , logHook = myLogHook 
-           -- , logHook = dynamicLogWithPPS $ myPPS
-           , layoutHook = smartBorders $ layoutHook xfceConfig
-           , startupHook = startupHook xfceConfig >> setWMName "LG3D"
-           , manageHook = manageHook xfceConfig <+> myManageHook
-           }
-           `additionalKeysP` myKeys
+    xmonad $ xfceConfig
+             { modMask = mod4Mask
+             , terminal = "urxvtc"
+             , workspaces = ["web", "term", "emacs", "im", "irc", "vid", "doc", "misc"]
+             , logHook = myLogHook
+             , layoutHook = smartBorders $ layoutHook xfceConfig
+             , startupHook = startupHook xfceConfig >> setWMName "LG3D"
+             , manageHook = manageHook xfceConfig <+> myManageHook
+             }
+             `additionalKeysP` myKeys
 
 myKeys = [ ("M-f", spawn "firefox")
          , ("M-x", spawn "urxvtc")
@@ -51,8 +43,8 @@ myKeys = [ ("M-f", spawn "firefox")
          --, ("M-s", spawn "nautilus ~")
          , ("M-a", spawn "vlc")
          , ("M-z", spawn "evince")
-         , ("<XF86MonBrightnessDown>", spawn "nvclock -S -5 &> /dev/null")
-         , ("<XF86MonBrightnessUp>", spawn "nvclock -S +5 &> /dev/null")                                
+         --, ("<XF86MonBrightnessDown>", spawn "nvclock -S -5 &> /dev/null")
+         --, ("<XF86MonBrightnessUp>", spawn "nvclock -S +5 &> /dev/null")                          
          , ("<XF86AudioPrev>", spawn "mpc --no-status prev")
          , ("<XF86AudioPlay>", spawn "mpc --no-status toggle")
          , ("<XF86AudioNext>", spawn "mpc --no-status next")
@@ -67,26 +59,25 @@ myManageHook = composeAll
                [ isFullscreen --> (doF S.focusDown <+> doFullFloat)
                ]
 
-myLogHook = do ss <- gets windowset
-               dynamicLogWithPP $ defaultPP
-                   { ppCurrent = \x -> wrap (iconize "left-bracket") (iconize "right-bracket" ++ displayNumber (lookupScreen ss x)) $ iconize x
-                   , ppVisible         = \x -> wrap "^p(+4)" ("^p(+4)" ++displayNumber (lookupScreen ss x)) $ iconize x
-                   , ppHidden          = wrap "^p(+4)" "^p(+8)" . iconize
-                   , ppHiddenNoWindows = wrap "^p(+4)" "^p(+8)" . iconizeEmpty
-                   , ppUrgent          = const ""
-                   , ppSep             = ""
-                   , ppWsSep           = ""
-                   , ppTitle           = const ""
-                   , ppLayout          = logoWrap . (\x -> case x of
-                                                        "Tall" -> (iconize "layout-tall")
-                                                        "Mirror Tall" -> (iconize "layout-mirror-tall")
-                                                        "Full" -> (iconize "layout-full")
-                                                    )
-                   , ppOrder           = reverse
-                   , ppOutput          = writeFile "/home/jon/.sysbar/pipe" . ("1 " ++) . (++ "\n")
-                   , ppSort            = getSortByIndex
-                   , ppExtras          = []
-                   }
+myLogHook = do
+    ws <- gets windowset
+    dynamicLogWithPP $ defaultPP
+                       { ppCurrent         = \x -> wrap (iconize "left-bracket") (iconize "right-bracket" ++ displayNumber (lookupScreen ws x)) $ iconize x
+                       , ppVisible         = \x -> wrap "^p(+4)" ("^p(+4)" ++ displayNumber (lookupScreen ws x)) $ iconize x
+                       , ppHidden          = wrap "^p(+4)" "^p(+8)" . iconize
+                       , ppHiddenNoWindows = wrap "^p(+4)" "^p(+8)" . iconizeEmpty
+                       , ppUrgent          = const ""
+                       , ppSep             = ""
+                       , ppWsSep           = ""
+                       , ppTitle           = const ""
+                       , ppLayout          = logoWrap . (\x -> case x of
+                                                            "Tall" -> (iconize "layout-tall")
+                                                            "Mirror Tall" -> (iconize "layout-mirror-tall")
+                                                            "Full" -> (iconize "layout-full")
+                                                        )
+                       , ppOrder           = reverse
+                       , ppOutput          = writeFile "/home/jon/.sysbar/pipe" . ("1 " ++) . (++ "\n")
+                       }
 
 displayNumber :: Maybe ScreenId -> String
 displayNumber m = case m of Nothing -> "^p(+4)"
