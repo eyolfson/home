@@ -60,12 +60,12 @@ myLogHook = do
                        , ppTitle           = const ""
                        , ppLayout          = myPPLayout
                        , ppOrder           = reverse
-                       , ppOutput          = writeFile pipeFile . wrap "1 " "\n"
+                       , ppOutput          = writeFile pipeFile . wrap "0 " "\n"
                        }
       where myPPCurrent m t = activeWorkspace t ++ iconScreen (lookup t m)
             myPPVisible m t = inactiveWorkspace t ++ iconScreen (lookup t m)
             myPPHidden = (++ screenPad) . inactiveWorkspace
-            myPPLayout = wrap "^p(+4)" "^p(+12)" . iconLayout
+            myPPLayout = wrap "^p(+4)" "^p(+7)" . iconLayout
 
 -- My Log Hook Settings and Helpers
 pipeFile :: String

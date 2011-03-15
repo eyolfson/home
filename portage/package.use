@@ -1,3 +1,8 @@
+# Chromium
+dev-libs/libxml2 icu
+www-client/chromium -gecko-mediaplayer
+#www-plugins/adobe-flash -32bit
+
 # LaTeX
 app-text/texlive extra graphics publishers science -X
 app-text/lcdf-typetools kpathsea
@@ -8,14 +13,14 @@ dev-lang/python sqlite
 dev-python/django postgres
 dev-vcs/git subversion
 dev-vcs/subversion -dso
+media-gfx/gimp exif
 media-sound/mpd aac flac mp3 ogg vorbis
 media-video/ffmpeg threads
-media-video/vlc qt4 dvd ffmpeg mpeg mad wxwindows aac dts a52 ogg flac theora oggvorbis matroska freetype bidi xv svga gnutls stream vlm httpd cdda vcd cdio live
+media-video/vlc a52 aac bidi cdda dts dvd ffmpeg flac fontconfig gnutls live matroska mp3 mpeg ogg qt4 samba stream theora vlm vorbis xv
+net-im/pidgin -gstreamer
 net-misc/wicd -pm-utils
 sys-devel/clang system-cxx-headers
 sys-fs/udev extras
-www-client/chromium -gecko-mediaplayer
-www-plugins/adobe-flash nspluginwrapper
 x11-libs/cairo cleartype
 x11-terms/rxvt-unicode xterm-color
-xfce-base/xfce-utils -lock
+# xfce-base/xfce-utils -lock

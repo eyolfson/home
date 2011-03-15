@@ -1,6 +1,6 @@
 # Baselayout 2.0.1-r1
 =sys-apps/baselayout-2.0.1-r1 ~amd64
-=sys-apps/openrc-0.6.4 ~amd64
+=sys-apps/openrc-0.7.0 ~amd64
 =net-misc/dhcpcd-5.2.8 ~amd64
 
 # Kernel and firmware
@@ -20,4 +20,5 @@
 # Other
 =dev-util/systemtap-1.4 ~amd64
 =sys-apps/parallel-20101202 ~amd64
+=www-plugins/adobe-flash-10.2.152.27_p201011173-r2 ~amd64
 =x11-misc/xtrlock-2.0-r3 ~amd64
