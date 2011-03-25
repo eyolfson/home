@@ -2,5 +2,5 @@ xrdb -merge ~/.Xresources
 tail -f ~/.dmplex/pipe | ~/bin/dmplex | ~/bin/dzen2 -ta l -xs 1 -h 24 -e '' & 
 /home/jon/bin/sysclock &
 urxvtd -q -o -f
-exec ck-launch-session startxfce4
-# exec xmonad
+# exec ck-launch-session startxfce4
+exec xmonad
