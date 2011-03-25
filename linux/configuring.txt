@@ -40,6 +40,11 @@
       Intel Wireless WiFi Next Gen AGN (iwlagn)
       CONFIG_IWLAGN [=m]
 
+-------> Intel Wireless WiFi Next Gen AGN (iwlagn) (IWLAGN [=m])
+
+        Intel Wireless-N/Advanced-N/Ultimate-N WiFi Link
+        CONFIG_IWL5000
+
 -> Device Drivers
 ---> Serial ATA and Parallel ATA drivers (ATA [=y])
 
