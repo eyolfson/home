@@ -1,7 +1,7 @@
 # Chromium
 dev-libs/libxml2 icu
 www-client/chromium -gecko-mediaplayer
-#www-plugins/adobe-flash -32bit
+www-plugins/adobe-flash -32bit
 
 # LaTeX
 app-text/texlive extra graphics publishers science -X

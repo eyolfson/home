@@ -112,3 +112,22 @@
 
           Build Conexant HD-audio codec support
           CONFIG_SND_HDA_CODEC_CONEXANT
+
+-> Power management and ACPI options
+
+  Suspend to RAM and standby
+  CONFIG_SUSPEND
+
+---> ACPI (Advanced Configuration and Power Interface) Support (ACPI [=y])
+
+    Deprecated /proc/acpi files
+    CONFIG_ACPI_PROCFS [=n]
+
+    Deprecated power /proc/acpi directories
+    CONFIG_ACPI_PROCFS_POWER [=n]
+
+    AC Adapter
+    CONFIG_ACPI_AC
+
+    Battery
+    CONFIG_ACPI_BATTERY

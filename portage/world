@@ -54,6 +54,7 @@ sys-kernel/module-rebuild
 sys-power/hibernate-script
 sys-power/powertop
 sys-process/htop
+sys-process/iotop
 sys-process/lsof
 sys-process/parallel
 virtual/python-sabnzbd
