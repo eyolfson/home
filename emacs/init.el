@@ -15,12 +15,18 @@
         (normal-top-level-add-subdirs-to-load-path)))
 
 ;;------------------------------------------------------------------------------
+;; Uniquify
+;;------------------------------------------------------------------------------
+(require 'uniquify)
+
+;;------------------------------------------------------------------------------
 ;; Custom set variables
 ;;------------------------------------------------------------------------------
 (custom-set-variables
-    '(c-basic-offset 4)
-    '(c-insert-tab-function (quote tab-to-tab-stop))
-    '(c-offsets-alist (quote ((substatement . 0) (substatement-open . 0) (substatement-label . 0)))))
+ '(c-basic-offset 4)
+ '(c-insert-tab-function (quote tab-to-tab-stop))
+ '(c-offsets-alist (quote ((substatement . 0) (substatement-open . 0) (substatement-label . 0))))
+ '(uniquify-buffer-name-style (quote post-forward) nil (uniquify)))
 
 ;;------------------------------------------------------------------------------
 ;; ECB
