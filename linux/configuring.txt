@@ -1,3 +1,6 @@
+General System and Drivers
+--------------------------
+
 -> General setup
 
   Automatic process group scheduling
@@ -131,3 +134,20 @@
 
     Battery
     CONFIG_ACPI_BATTERY
+
+iotop
+-----
+
+-> General setup
+
+  Export task/process statistics through netlink (EXPERIMENTAL)
+  CONFIG_TASKSTATS
+
+  Enable per-task delay accounting (EXPERIMENTAL)
+  CONFIG_TASK_DELAY_ACCT
+
+  Enable extended accounting over taskstats (EXPERIMENTAL)
+  CONFIG_TASK_XACCT
+
+  Enable per-task storage I/O accounting (EXPERIMENTAL)
+  CONFIG_TASK_IO_ACCOUNTING
