@@ -133,6 +133,12 @@ General System and Drivers
     Battery
     CONFIG_ACPI_BATTERY
 
+-> Device Drivers
+---> USB support (USB_SUPPORT [=y])
+
+    xHCI HCD (USB 3.0) support (EXPERIMENTAL)
+    CONFIG_USB_XHCI_HCD [=y]
+
 iotop
 -----
 
