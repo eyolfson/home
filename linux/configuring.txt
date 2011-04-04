@@ -59,7 +59,7 @@ General System and Drivers
 -----> Ethernet (1000 Mbit) (NETDEV_1000 [=y])
 
       Intel(R) PRO/1000 PCI-Express Gigabit Ethernet support
-      CONFIG_E1000E
+      CONFIG_E1000E [=m]
 
 -> Device Drivers
 ---> Character devices
@@ -94,11 +94,9 @@ General System and Drivers
 
       OSS Mixer API
       CONFIG_SND_MIXER_OSS [=m]
-      snd-mixer-oss
 
       OSS PCM (digital audio) API
       CONFIG_SND_PCM_OSS [=m]
-      snd-pcm-oss
 
       Verbose procfs contents
       CONFIG_SND_VERBOSE_PROCFS [=n]

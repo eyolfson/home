@@ -15,6 +15,7 @@ dev-vcs/git subversion
 dev-vcs/subversion -dso
 media-gfx/gimp exif
 media-sound/mpd aac flac mp3 ogg vorbis
+virtual/ffmpeg threads
 media-video/ffmpeg threads
 media-video/vlc a52 aac bidi cdda dts dvd ffmpeg flac fontconfig gnutls live matroska mp3 mpeg ogg qt4 samba stream theora vlm vorbis xv
 net-im/pidgin -gstreamer

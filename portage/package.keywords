@@ -1,12 +1,10 @@
-# Baselayout 2.0.1-r1
-=sys-apps/baselayout-2.0.1-r1 ~amd64
-=sys-apps/openrc-0.7.0 ~amd64
-=net-misc/dhcpcd-5.2.8 ~amd64
+# Baselayout 2.0.2
+=sys-apps/baselayout-2.0.2 ~amd64
+=sys-apps/openrc-0.8.0 ~amd64
 
 # Kernel and firmware
-=sys-kernel/gentoo-sources-2.6.35-r12 ~amd64
-=sys-kernel/gentoo-sources-2.6.38 ~amd64
-=net-wireless/iwl6000-ucode-9.221.4.1 ~amd64
+sys-kernel/gentoo-sources ~amd64
+net-wireless/iwl6000-ucode ~amd64
 
 # Emacs
 =app-emacs/yasnippet-0.6.1c ~amd64
