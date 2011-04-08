@@ -1,33 +1,39 @@
+Laptop Configuration Files
+==========================
+
 dzen
-====
+----
 pixmaps
--------
+
 Contains all the icons used by dzen.
 
 emacs
-=====
-Symlink `~/.emacs.d` to this directory.
+-----
+
+| Source | Destination |
+|:-------|:------------|
+| .      | ~/.emacs.d  |
 
 git
-===
+---
 config
 ------
 Symlink `~/.gitconfig` to this file.
 
 linux
-=====
+-----
 VERSION.config
 --------------
 Symlink `/usr/src/linux-VERSION/.config` to these files.
 
 mpd
-===
+---
 config
 ------
 Symlink `~/.mpdconf` to this file.
 
 portage
-=======
+-------
 env
 ---
 Symlink `etc/portage/env` to this directory.
@@ -65,13 +71,13 @@ portage/world
 Symlink `/var/lib/portage/world` to this file.
 
 xmonad
-======
+------
 xmonad.hs
 ---------
 Symlink `~/.xmonad/xmonad.hs` to this file.
 
 xorg
-====
+----
 fontlist-fix
 ------------
 Python script that finds all installed fonts and runs mkfontdir on those that
@@ -88,7 +94,7 @@ resources
 Symlink `~/.Xresources` to this file.
 
 zsh
-===
+---
 functions
 ---------
 Contains my custom functions.
