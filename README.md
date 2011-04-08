@@ -10,9 +10,9 @@ Contains all the icons used by dzen.
 emacs
 -----
 
-| Source | Destination |
-|:-------|:------------|
-| .      | ~/.emacs.d  |
+|Source|Destination|
+|:-----|:----------|
+|.|~/.emacs.d|
 
 git
 ---
