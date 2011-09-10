@@ -1,2 +1,0 @@
->=dev-db/postgresql-base-8.5
->=dev-db/postgresql-server-8.5

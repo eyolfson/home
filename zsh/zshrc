@@ -1,18 +1,18 @@
-fpath=($fpath $HOME/etc/zsh/functions/Prompts)
+fpath=($HOME/etc/zsh/functions/Prompts $fpath)
 
 # Completion
-autoload -U compinit
+autoload -Uz compinit
 compinit
 
 # Options
-setopt extendedglob
+setopt autocd extendedglob
 
 # Emacs keybindings
 bindkey -e
 
 # Prompt
 autoload -Uz promptinit; promptinit
-prompt gentoo
+prompt eyolfson
 
 # Better TAB Completion
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -22,10 +22,10 @@ zstyle ':completion::complete:*' use-cache 1
 eval `dircolors`
 
 # Variables
-export PATH="${PATH}:${HOME}/bin"
-export PIN_HOME=${HOME}/src/pin-2.8-33586-gcc.3.4.6-ia32_intel64-linux
-export GERONIMO_HOME=$HOME/workspace/geronimo-jetty7-minimal-2.2
-export CLASSPATH=$HOME/lib/java/antlr-3.2.jar
+#export PATH="${PATH}:${HOME}/bin"
+#export PIN_HOME=${HOME}/src/pin-2.8-33586-gcc.3.4.6-ia32_intel64-linux
+#export GERONIMO_HOME=$HOME/workspace/geronimo-jetty7-minimal-2.2
+#export CLASSPATH=$HOME/lib/java/antlr-3.2.jar
 #export CLASSPATH=$CLASSPATH:$HOME/workspace/ece251-a2-solns/classes
 
 #export GROFF_NO_SGR=
@@ -38,9 +38,9 @@ export CLASSPATH=$HOME/lib/java/antlr-3.2.jar
 #export LESS_TERMCAP_us=$'\E[01;32m'    # Begin Underline
 
 # History
-HISTFILE=~/.zshhist
-HISTSIZE=1000
-SAVEHIST=1000
+#HISTFILE=~/.zshhist
+#HISTSIZE=1000
+#SAVEHIST=1000
 
 # Aliases
 alias ls='ls --color=auto'
