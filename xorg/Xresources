@@ -1,13 +1,13 @@
-Emacs.font: Bitstream Vera Sans Mono-6
+Emacs.font: Bitstream Vera Sans Mono-8
 Emacs.fontBackend: xft
 
-dzen2.font: Bitstream Vera Sans Mono-6:bold
+dzen2.font: Bitstream Vera Sans Mono-8:bold
 dzen2.foreground: white
 dzen2.background: black
 
 urxvt.foreground: white
 urxvt.background: black
-urxvt.font: xft:Bitstream Vera Sans Mono-6
+urxvt.font: xft:DejaVu Sans Mono-8
 urxvt.scrollBar: false
 urxvt.secondaryScroll: true
 urxvt.scrollTtyKeypress: true
@@ -48,7 +48,12 @@ Xcursor.theme: Vanilla-DMZ
 Xcursor.size: 16
 
 ! Xft
-Xft.antialias: 1
-Xft.hinting: -1
-Xft.rgba: none
-Xft.hintstyle: hintfull
+!Xft.antialias: 1
+!Xft.hinting: -1
+!Xft.rgba: none
+!Xft.hintstyle: hintfull
+
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintfull

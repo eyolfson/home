@@ -1,6 +1,6 @@
 import XMonad
 import XMonad.Core (windowset)
-import XMonad.Config.Xfce (xfceConfig)
+-- import XMonad.Config.Xfce (xfceConfig)
 import XMonad.Hooks.DynamicLog (PP(..), defaultPP, dynamicLogWithPP, wrap)
 import XMonad.Hooks.ManageHelpers (doFullFloat, isFullscreen)
 import XMonad.Hooks.SetWMName (setWMName)
@@ -14,21 +14,22 @@ import Data.String.Utils (replace)
 
 main :: IO ()
 main =
-    xmonad $ xfceConfig
+    xmonad $ defaultConfig
              { modMask = mod4Mask
              , terminal = "urxvtc"
              , workspaces = ["web", "term", "emacs", "im", "irc", "vid", "doc", "misc"]
              , logHook = myLogHook
-             , layoutHook = smartBorders $ layoutHook xfceConfig
-             , startupHook = startupHook xfceConfig >> setWMName "LG3D"
-             , manageHook = manageHook xfceConfig <+> myManageHook
+             , layoutHook = smartBorders $ layoutHook defaultConfig
+             , startupHook = startupHook defaultConfig >> setWMName "LG3D"
+             , manageHook = manageHook defaultConfig <+> myManageHook
              }
              `additionalKeysP` myKeys
 
 myKeys = [ ("M-f", spawn "firefox")
-         , ("M-x", spawn "urxvtc")
+         , ("M-x", spawn "urxvt")
          , ("M-g", spawn "emacsclient -c")
          , ("M-d", spawn "pidgin")
+         , ("M-s", spawn "scrot")
          , ("M-a", spawn "vlc")
          , ("M-z", spawn "evince")
          , ("<XF86AudioPrev>", spawn "mpc --no-status prev")
