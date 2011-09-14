@@ -45,3 +45,4 @@ eval `dircolors`
 # Aliases
 alias ls='ls --color=auto'
 alias grep='grep --colour=auto'
+alias git-first-push='git push origin master:refs/heads/master'
