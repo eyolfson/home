@@ -36,7 +36,7 @@
 ;;------------------------------------------------------------------------------
 ;; ECB
 ;;------------------------------------------------------------------------------
-(require 'ecb)
+;; (require 'ecb)
 
 ;;------------------------------------------------------------------------------
 ;; Color Theme
@@ -60,10 +60,11 @@
 ;;------------------------------------------------------------------------------
 ;; YASnippet
 ;;------------------------------------------------------------------------------
-(add-to-list 'load-path "/usr/share/emacs/site-lisp/yas")
-(require 'yasnippet)
-(yas/initialize)
-(yas/load-directory "/usr/share/emacs/site-lisp/yas/snippets")
+;;(add-to-list 'load-path "/usr/share/emacs/site-lisp/yas")
+;;(require 'yasnippet)
+;;(yas/initialize)
+;;(yas/load-directory "/usr/share/emacs/site-lisp/yas/snippets")
+
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.

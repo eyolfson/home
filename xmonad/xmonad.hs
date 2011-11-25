@@ -10,7 +10,7 @@ import qualified XMonad.StackSet as S
 
 import Control.Arrow ((&&&))
 import Data.Char (toLower)
-import Data.String.Utils (replace)
+--import Data.String.Utils (replace)
 
 main :: IO ()
 main =
@@ -70,7 +70,7 @@ myLogHook = do
 
 -- My Log Hook Settings and Helpers
 pipeFile :: String
-pipeFile = "/home/jon/.dmplex/pipe"
+pipeFile = "/home/jon/xmonad-status"
 
 iconWrap :: String -> String
 iconWrap = wrap "^i(/home/jon/etc/dzen/pixmaps/" ".xpm)"
@@ -90,7 +90,8 @@ inactiveWorkspace :: String -> String
 inactiveWorkspace = wrap bracketPad bracketPad . iconWrap
 
 iconLayout :: String -> String
-iconLayout = iconWrap . ("layout-" ++) . replace " " "-" . map toLower
+-- iconLayout = iconWrap . ("layout-" ++) . replace " " "-" . map toLower
+iconLayout = iconWrap . ("layout-" ++) . map (\x -> if x == ' ' then '-' else x) . map toLower
 
 iconScreen :: Maybe ScreenId -> String
 iconScreen Nothing = "^p(+4)"

@@ -8,6 +8,8 @@ fi
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 xrdb -merge ~/.Xresources
+xrdb -merge ~/etc/xorg/Xresources-riker
+
 xsetroot -cursor_name left_ptr &
 
 # tail -f ~/.dmplex/pipe | ~/bin/dmplex | ~/bin/dzen2 -ta l -xs 1 -h 24 -e '' & 
