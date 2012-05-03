@@ -22,6 +22,7 @@ zstyle ':completion::complete:*' use-cache 1
 eval `dircolors`
 
 # Variables
+export PATH="${HOME}/bin:${PATH}"
 export PATH="${PATH}:${HOME}/opt/pin"
 export PIN_HOME="${HOME}/opt/pin"
 

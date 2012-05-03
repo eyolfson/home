@@ -25,7 +25,7 @@ main =
              }
              `additionalKeysP` myKeys
 
-myKeys = [ ("M-f", spawn "firefox")
+myKeys = [ ("M-f", spawn "chromium")
          , ("M-x", spawn "urxvt")
          , ("M-g", spawn "emacsclient -c")
          , ("M-d", spawn "pidgin")
