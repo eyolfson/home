@@ -1,4 +1,4 @@
-fpath=($HOME/etc/zsh/functions/Prompts $fpath)
+fpath=($HOME/.zsh/functions/Prompts $fpath)
 
 # Completion
 autoload -Uz compinit
@@ -23,8 +23,7 @@ eval `dircolors`
 
 # Variables
 export PATH="${HOME}/bin:${PATH}"
-export PATH="${PATH}:${HOME}/opt/pin"
-export PIN_HOME="${HOME}/opt/pin"
+#export PATH="${PATH}:${HOME}/opt/pin"
 
 #export GERONIMO_HOME=$HOME/workspace/geronimo-jetty7-minimal-2.2
 #export CLASSPATH=$HOME/lib/java/antlr-3.2.jar

@@ -1,4 +1,4 @@
-Emacs.font: Bitstream Vera Sans Mono-8
+Emacs.font: DejaVu Sans Mono-8
 Emacs.fontBackend: xft
 
 dzen2.font: Bitstream Vera Sans Mono-8:bold
