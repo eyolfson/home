@@ -1,0 +1,8 @@
+vo = vaapi
+ao = alsa
+
+nolirc = yes
+double = yes
+
+[extension.mp4]
+demuxer = mov

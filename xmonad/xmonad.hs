@@ -1,5 +1,7 @@
 import XMonad
 import XMonad.Core (windowset)
+import XMonad.Hooks.ManageDocks (avoidStruts, ToggleStruts (ToggleStruts))
+-- import XMonad.Hooks.ManageDocks (ToggleStruts)
 -- import XMonad.Config.Xfce (xfceConfig)
 import XMonad.Hooks.DynamicLog (PP(..), defaultPP, dynamicLogWithPP, wrap)
 import XMonad.Hooks.ManageHelpers (doFullFloat, isFullscreen)
@@ -19,7 +21,7 @@ main =
              , terminal = "urxvtc"
              , workspaces = ["web", "term", "emacs", "im", "irc", "vid", "doc", "misc"]
              , logHook = myLogHook
-             , layoutHook = smartBorders $ layoutHook defaultConfig
+             , layoutHook = avoidStruts $ smartBorders $ layoutHook defaultConfig
              , startupHook = startupHook defaultConfig >> setWMName "LG3D"
              , manageHook = manageHook defaultConfig <+> myManageHook
              }
@@ -32,6 +34,7 @@ myKeys = [ ("M-f", spawn "chromium")
          , ("M-s", spawn "xtrlock")
          , ("M-a", spawn "vlc")
          , ("M-z", spawn "evince")
+         , ("M-b", sendMessage ToggleStruts)
          , ("<XF86AudioPrev>", spawn "mpc --no-status prev")
          , ("<XF86AudioPlay>", spawn "mpc --no-status toggle")
          , ("<XF86AudioNext>", spawn "mpc --no-status next")
@@ -70,10 +73,10 @@ myLogHook = do
 
 -- My Log Hook Settings and Helpers
 pipeFile :: String
-pipeFile = "/home/jon/xmonad-status"
+pipeFile = "/home/jon/.dmplex"
 
 iconWrap :: String -> String
-iconWrap = wrap "^i(/home/jon/etc/dzen/pixmaps/" ".xpm)"
+iconWrap = wrap "^i(/home/jon/git/etc/dzen/pixmaps/" ".xpm)"
 
 bracketPad :: String
 bracketPad = "^p(+4)"

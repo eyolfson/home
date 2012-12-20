@@ -62,8 +62,19 @@
 ;;------------------------------------------------------------------------------
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/yas")
 (require 'yasnippet)
-(yas/initialize)
+;; (yas/initialize)
 (yas/load-directory "/usr/share/emacs/site-lisp/yas/snippets")
+
+;;------------------------------------------------------------------------------
+;; Org-Mode
+;;------------------------------------------------------------------------------
+(require 'org-install)
+
+;;------------------------------------------------------------------------------
+;; Evil-Mode
+;;------------------------------------------------------------------------------
+(require 'evil)
+(evil-mode 1)
 
 (custom-set-faces
   ;; custom-set-faces was added by Custom.

@@ -1,7 +1,7 @@
 Emacs.font: DejaVu Sans Mono-8
 Emacs.fontBackend: xft
 
-dzen2.font: Bitstream Vera Sans Mono-8:bold
+dzen2.font: DejaVu Sans Mono-8:bold
 dzen2.foreground: white
 dzen2.background: black
 
@@ -12,6 +12,8 @@ urxvt.scrollBar: false
 urxvt.secondaryScroll: true
 urxvt.scrollTtyKeypress: true
 urxvt.multichar_encoding: utf-8
+urxvt.transparent: true
+urxvt.shading: 15
 
 ! Clickable URLs
 URxvt.perl-ext-common:  default,matcher
