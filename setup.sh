@@ -6,11 +6,20 @@ create_symlink()
 {
     local SOURCE="${GIT_DIR}/${1}"
     local TARGET="${HOME}/${2}"
-    ln -sf $SOURCE $TARGET
+    echo -n "Creating symlink ${2}"
+    if [ -e $TARGET ]
+    then
+        echo -e " \033[1;31mfail\033[0m"
+    else
+        ln -s $SOURCE $TARGET
+        echo -e " \033[1;32mdone\033[0m"
+    fi
 }
 
 # emacs
-create_symlink "emacs" ".emacs.d"
+create_symlink "emacs/init.el" ".emacs.d/init.el"
+create_symlink "emacs/site-lisp" ".emacs.d/site-lisp"
+create_symlink "emacs/themes" ".emacs.d/themes"
 
 # git
 create_symlink "git/gitconfig" ".gitconfig"

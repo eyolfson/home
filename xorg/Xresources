@@ -46,11 +46,12 @@ urxvt.multichar_encoding: utf-8
 URxvt.perl-ext-common:  default,matcher
 URxvt.urlLauncher:      /usr/bin/chromium
 URxvt.matcher.button:   1
+!! Colours
 urxvt.foreground: S_base0
 urxvt.background: S_base03
 !! Black
-URxvt*color0: S_base1
-URxvt*color8: S_base1
+URxvt*color0: S_base02
+URxvt*color8: S_base02
 !! Red
 URxvt*color1: S_red
 URxvt*color9: S_red
@@ -70,14 +71,14 @@ URxvt*color13: S_magenta
 URxvt*color6: S_cyan
 URxvt*color14: S_cyan
 !! White
-URxvt*color7: S_base01
-URxvt*color15: S_base01
+URxvt*color7: S_base2
+URxvt*color15: S_base2
 
 ! Xorg
 !! Cursor
 Xcursor.theme: Vanilla-DMZ
 Xcursor.size: 16
-!! Xfr
+!! Xft
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true

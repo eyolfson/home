@@ -39,17 +39,10 @@
 ;; (require 'ecb)
 
 ;;------------------------------------------------------------------------------
-;; Color Theme
-;;
-;; Color Theme Tango 2
-;; 05ed82ef54947c8830e77c147a57f9325e833378
-;; http://github.com/wfarr/color-theme-tango-2/
+;; Theme
 ;;------------------------------------------------------------------------------
-(require 'color-theme)
-(require 'color-theme-tango-2)
-(add-to-list 'color-themes '(color-theme-tango-2 "Tango 2"
-                             "Will Farrington <will@railsmachine.com>"))
-(eval-after-load "color-theme" '(color-theme-tango-2))
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(load-theme 'solarized-dark t)
 
 ;;------------------------------------------------------------------------------
 ;; Haskell Mode
