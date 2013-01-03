@@ -6,3 +6,4 @@
 - Volume down
 - Mute
 - mpd controls
+- Create .dzen/pipe

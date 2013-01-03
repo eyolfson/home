@@ -16,6 +16,9 @@ create_symlink()
     fi
 }
 
+# dzen
+create_symlink "dzen/pixmaps" ".dzen/pixmaps"
+
 # emacs
 create_symlink "emacs/init.el" ".emacs.d/init.el"
 create_symlink "emacs/site-lisp" ".emacs.d/site-lisp"

@@ -1,8 +1,6 @@
 import XMonad
 import XMonad.Core (windowset)
 import XMonad.Hooks.ManageDocks (avoidStruts, ToggleStruts (ToggleStruts))
--- import XMonad.Hooks.ManageDocks (ToggleStruts)
--- import XMonad.Config.Xfce (xfceConfig)
 import XMonad.Hooks.DynamicLog (PP(..), defaultPP, dynamicLogWithPP, wrap)
 import XMonad.Hooks.ManageHelpers (doFullFloat, isFullscreen)
 import XMonad.Hooks.SetWMName (setWMName)
@@ -12,7 +10,6 @@ import qualified XMonad.StackSet as S
 
 import Control.Arrow ((&&&))
 import Data.Char (toLower)
---import Data.String.Utils (replace)
 
 main :: IO ()
 main =
@@ -41,8 +38,6 @@ myKeys = [ ("M-f", spawn "chromium")
          , ("<XF86AudioMute>", spawn "amixer set Master toggle &> /dev/null")
          , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%- &> /dev/null")
          , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 5%+ &> /dev/null")  
-         --, ("M-p", spawn "xfrun4")
-         --, ("M-Q", spawn "xfce4-session-logout")
          ]
 
 myManageHook = composeAll
@@ -73,10 +68,10 @@ myLogHook = do
 
 -- My Log Hook Settings and Helpers
 pipeFile :: String
-pipeFile = "/home/jon/.dmplex"
+pipeFile = "/home/jon/.dzen/pipe"
 
 iconWrap :: String -> String
-iconWrap = wrap "^i(/home/jon/git/etc/dzen/pixmaps/" ".xpm)"
+iconWrap = wrap "^i(/home/jon/.dzen/pixmaps/" ".xpm)"
 
 bracketPad :: String
 bracketPad = "^p(+4)"
@@ -93,7 +88,6 @@ inactiveWorkspace :: String -> String
 inactiveWorkspace = wrap bracketPad bracketPad . iconWrap
 
 iconLayout :: String -> String
--- iconLayout = iconWrap . ("layout-" ++) . replace " " "-" . map toLower
 iconLayout = iconWrap . ("layout-" ++) . map (\x -> if x == ' ' then '-' else x) . map toLower
 
 iconScreen :: Maybe ScreenId -> String
