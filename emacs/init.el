@@ -68,6 +68,7 @@
 ;;------------------------------------------------------------------------------
 (require 'evil)
 (evil-mode 1)
+(setq evil-default-cursor t)
 
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
