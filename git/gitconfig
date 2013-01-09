@@ -5,3 +5,5 @@
     lol = log --pretty=oneline --abbrev-commit --graph --decorate
 [color]
     ui = true
+[push]
+	default = simple
