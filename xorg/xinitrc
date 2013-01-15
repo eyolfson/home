@@ -11,6 +11,5 @@ xsetroot -cursor_name left_ptr &
 tail -f ~/.dzen/pipe | dmplex | dzen2 -ta l -xs 1 -h 24 -e '' & 
 /home/jon/bin/sysbar &
 urxvtd -q -o -f
-nitrogen --restore &
-# exec ck-launch-session startxfce4
+sh ~/.fehbg &
 exec xmonad
