@@ -8,11 +8,7 @@
 ;;------------------------------------------------------------------------------
 ;; Set load path
 ;;------------------------------------------------------------------------------
-(if (fboundp 'normal-top-level-add-subdirs-to-load-path)
-    (let* ((my-lisp-dir "~/.emacs.d/site-lisp/")
-        (default-directory my-lisp-dir))
-        (setq load-path (cons my-lisp-dir load-path))
-        (normal-top-level-add-subdirs-to-load-path)))
+(add-to-list 'load-path "~/.emacs.d/site-lisp/")
 
 ;;------------------------------------------------------------------------------
 ;; Uniquify
@@ -23,13 +19,14 @@
 ;; Custom set variables
 ;;------------------------------------------------------------------------------
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(c-basic-offset 4)
  '(c-insert-tab-function (quote tab-to-tab-stop))
  '(c-offsets-alist (quote ((substatement . 0) (substatement-open . 0) (substatement-label . 0))))
+ '(custom-safe-themes (quote ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(ecb-options-version "2.40")
  '(uniquify-buffer-name-style (quote post-forward) nil (uniquify)))
 
@@ -42,7 +39,7 @@
 ;; Theme
 ;;------------------------------------------------------------------------------
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(load-theme 'solarized-dark t)
+(load-theme 'solarized-dark)
 
 ;;------------------------------------------------------------------------------
 ;; Haskell Mode
@@ -71,8 +68,8 @@
 (setq evil-default-cursor t)
 
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
