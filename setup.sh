@@ -42,4 +42,5 @@ create_symlink "xorg/xinitrc" ".xinitrc"
 
 # zsh
 create_symlink "zsh/oh-my-zsh" ".oh-my-zsh"
+create_symlink "zsh/zprofile" ".zprofile"
 create_symlink "zsh/zshrc" ".zshrc"
