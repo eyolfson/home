@@ -31,11 +31,6 @@
 Emacs.font: DejaVu Sans Mono-8
 Emacs.fontBackend: xft
 
-! Dzen
-dzen2.font: Bitstream Vera Sans Mono-8:bold
-dzen2.foreground: S_base0
-dzen2.background: S_base02
-
 ! rxvt-unicode
 urxvt.font: xft:DejaVu Sans Mono-8
 urxvt.scrollBar: false

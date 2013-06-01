@@ -7,11 +7,8 @@ fi
 
 xrdb -merge ~/.Xresources
 xsetroot -cursor_name left_ptr &
-
-tail -f ~/.dzen/pipe | dmplex | dzen2 -ta l -xs 1 -h 24 -e '' & 
-/home/jon/bin/sysbar &
 xset s off
 xset -dpms
 urxvtd -q -o -f
 sh ~/.fehbg &
-exec xmonad
+exec i3
