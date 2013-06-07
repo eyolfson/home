@@ -31,6 +31,10 @@ bindsym $mod+d exec dmenu_run -fn 'DejaVu Sans Mono-8'
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# start other programs
+bindsym $mod+u exec emacsclient -c
+bindsym $mod+i exec chromium
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
