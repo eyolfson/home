@@ -4,7 +4,7 @@
 
 ### i3
 
-- demnu-xft
+- dmenu-xft
 - i3
 
 ## Setup
