@@ -23,4 +23,6 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="emacsclient -t"
 export PATH="${HOME}/bin:${PATH}"
 
+alias pacman-installed-non-base="comm -23 <(pacman -Qeq|sort) <(pacman -Qgq base base-devel|sort)"
+
 eval $(keychain --eval -Q --quiet id_rsa)
