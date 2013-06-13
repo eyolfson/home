@@ -149,3 +149,4 @@ bar {
 }
 
 for_window [class="Chromium"] border pixel
+for_window [class="Firefox"] border pixel
