@@ -33,7 +33,7 @@ bindsym $mod+d exec dmenu_run -fn 'DejaVu Sans Mono-8'
 
 # start other programs
 bindsym $mod+u exec emacsclient -c
-bindsym $mod+i exec chromium
+bindsym $mod+i exec firefox
 
 # change focus
 bindsym $mod+j focus left

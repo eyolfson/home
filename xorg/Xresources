@@ -39,7 +39,7 @@ urxvt.scrollTtyKeypress: true
 urxvt.multichar_encoding: utf-8
 !! Clickable URLs
 URxvt.perl-ext-common:  default,matcher
-URxvt.urlLauncher:      /usr/bin/chromium
+URxvt.urlLauncher:      /usr/bin/firefox
 URxvt.matcher.button:   1
 !! Colours
 urxvt.foreground: S_base0
