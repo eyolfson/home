@@ -149,10 +149,10 @@ bar {
     background #002b36
     statusline #839496
     separator  #586e75
-    focused_workspace  #002b36 #002b36 #859900
-    active_workspace   #002b36 #002b36 #b58900
+    focused_workspace  #268bd2 #268bd2 #002b36
+    active_workspace   #859900 #859900 #002b36
+    urgent_workspace   #dc322f #dc322f #002b36
     inactive_workspace #073642 #073642 #586e75
-    urgent_workspace   #002b36 #002b36 #dc322f
   }
   status_command i3status
 }
