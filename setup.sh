@@ -33,6 +33,9 @@ create_symlink "mpd/mpdconf" ".mpdconf"
 # mplayer
 create_symlink "mplayer/config" ".mplayer/config"
 
+# mutt
+create_symlink "mutt/muttrc" ".mutt/muttrc"
+
 # pentadactyl
 create_symlink "pentadactyl/pentadactylrc" ".pentadactylrc"
 

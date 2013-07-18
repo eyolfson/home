@@ -1,0 +1,3 @@
+source /etc/Muttrc.gpg.dist
+set editor=`echo \$EDITOR`
+set folder=$HOME/email
