@@ -6,6 +6,7 @@
 
 - dmenu-xft
 - i3
+- __email:__ msmtp mutt notmuch-mutt offlineimap
 
 ## Setup
 

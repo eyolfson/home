@@ -1,3 +1,12 @@
+# Enable GPG
 source /etc/Muttrc.gpg.dist
-set editor=`echo \$EDITOR`
-set folder=$HOME/email
+
+set editor = `echo \$EDITOR`
+set folder = $HOME/email
+set mbox_type = Maildir
+set spoolfile = +eyolfson@gmail.com/inbox
+mailboxes +eyolfson@gmail.com/drafts
+mailboxes +eyolfson@gmail.com/inbox
+mailboxes +eyolfson@gmail.com/sent
+mailboxes +eyolfson@gmail.com/spam
+mailboxes +eyolfson@gmail.com/trash

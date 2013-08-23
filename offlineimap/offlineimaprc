@@ -1,0 +1,21 @@
+[general]
+ui = ttyui
+accounts = eyolfson@gmail.com
+pythonfile = ~/.offlineimap.py
+
+[Account eyolfson@gmail.com]
+localrepository = eyolfson@gmail.com-local
+remoterepository = eyolfson@gmail.com-remote
+
+[Repository eyolfson@gmail.com-local]
+type = Maildir
+localfolders = ~/email/eyolfson@gmail.com
+nametrans = gmail_local_nametrans
+
+[Repository eyolfson@gmail.com-remote]
+type = Gmail 
+remoteuser = eyolfson@gmail.com
+remotepasseval = pass_show('eyolfson@gmail.com')
+folderfilter = gmail_folderfilter
+nametrans = gmail_remote_nametrans
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
