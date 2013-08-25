@@ -2,11 +2,10 @@
 
 ## Dependencies
 
-### i3
+### Arch Linux Packages
 
-- dmenu-xft
-- i3
 - __email:__ msmtp mutt notmuch-mutt offlineimap
+- __i3:__ dmenu-xft i3-wm i3lock i3status
 
 ## Setup
 
