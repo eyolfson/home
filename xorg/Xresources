@@ -66,8 +66,8 @@ URxvt*color13: S_magenta
 URxvt*color6: S_cyan
 URxvt*color14: S_cyan
 !! White
-URxvt*color7: S_base2
-URxvt*color15: S_base2
+URxvt*color7: S_base1
+URxvt*color15: S_base1
 
 ! Xorg
 !! Cursor

@@ -1,6 +1,6 @@
 [general]
-ui = ttyui
-accounts = eyolfson@gmail.com, jeyolfso@uwaterloo.ca
+ui = basic
+accounts = eyolfson@gmail.com, jeyolfso@uwaterloo.ca, jon@eyolfson.com
 pythonfile = ~/.offlineimap.py
 
 [Account eyolfson@gmail.com]
@@ -36,4 +36,21 @@ remotehost = mailservices.uwaterloo.ca
 remoteuser = jeyolfso
 remotepasseval = pass_show('jeyolfso@uwaterloo.ca')
 nametrans = uwaterloo_remote_nametrans
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
+[Account jon@eyolfson.com]
+localrepository = jon@eyolfson.com-local
+remoterepository = jon@eyolfson.com-remote
+
+[Repository jon@eyolfson.com-local]
+type = Maildir
+localfolders = ~/email/jon@eyolfson.com
+nametrans = gmail_local_nametrans
+
+[Repository jon@eyolfson.com-remote]
+type = Gmail
+remoteuser = jon@eyolfson.com
+remotepasseval = pass_show('jon@eyolfson.com')
+folderfilter = gmail_folderfilter
+nametrans = gmail_remote_nametrans
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
