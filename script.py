@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 import os
 
+data = [('notmuch/config', '.notmuch-config')]
+
 git_dir = os.path.dirname(os.path.abspath(__file__))
 home_dir = os.environ['HOME']
 
