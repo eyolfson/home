@@ -54,7 +54,7 @@
 (require 'org-install)
 
 ;;------------------------------------------------------------------------------
-;; Evil-Mode
+;; evil
 ;;------------------------------------------------------------------------------
 (setq evil-default-cursor t)
 (require 'evil)
@@ -64,8 +64,12 @@
 ;; notmuch
 ;;------------------------------------------------------------------------------
 (require 'notmuch)
-(setq notmuch-fcc-dirs
-     '(("jeyolfso@uwaterloo.ca" . "jeyolfso@uwaterloo.ca/sent")))
+(define-key notmuch-hello-mode-map
+    (kbd "m") (lambda () (interactive) (notmuch-mua-new-mail t)))
+(setq
+    notmuch-show-logo nil
+    notmuch-fcc-dirs
+        '(("jeyolfso@uwaterloo.ca" . "jeyolfso@uwaterloo.ca/sent")))
 
 ;;------------------------------------------------------------------------------
 ;; message

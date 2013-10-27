@@ -32,42 +32,48 @@ Emacs.font: DejaVu Sans Mono-8
 Emacs.fontBackend: xft
 
 ! rxvt-unicode
-urxvt.font: xft:DejaVu Sans Mono-8
-urxvt.scrollBar: false
-urxvt.secondaryScroll: true
-urxvt.scrollTtyKeypress: true
-urxvt.multichar_encoding: utf-8
+URxvt.font: xft:DejaVu Sans Mono-8
+! urxvt.boldFont: xft:DejaVu Serif-12
+URxvt.scrollBar: false
+URxvt.secondaryScroll: true
+URxvt.scrollTtyKeypress: true
+URxvt.multichar_encoding: utf-8
 !! Clickable URLs
 URxvt.perl-ext-common:  default,matcher
 URxvt.urlLauncher:      /usr/bin/firefox
 URxvt.matcher.button:   1
 !! Colours
-urxvt.foreground: S_base0
-urxvt.background: S_base03
+URxvt.background: S_base03
+URxvt.foreground: S_base0
 !! Black
-URxvt*color0: S_base02
-URxvt*color8: S_base02
+URxvt.color0: S_base02
+URxvt.color8: S_base02
 !! Red
-URxvt*color1: S_red
-URxvt*color9: S_red
+URxvt.color1: S_red
+URxvt.color9: S_red
 !! Green
-URxvt*color2: S_green
-URxvt*color10: S_green
+URxvt.color2: S_green
+URxvt.color10: S_green
 !! Yellow
-URxvt*color3: S_yellow
-URxvt*color11: S_yellow
+URxvt.color3: S_yellow
+URxvt.color11: S_yellow
 !! Blue
-URxvt*color4: S_blue
-URxvt*color12: S_blue
+URxvt.color4: S_blue
+URxvt.color12: S_blue
 !! Magenta
-URxvt*color5: S_magenta
-URxvt*color13: S_magenta
+URxvt.color5: S_magenta
+URxvt.color13: S_magenta
 !! Cyan
-URxvt*color6: S_cyan
-URxvt*color14: S_cyan
+URxvt.color6: S_cyan
+URxvt.color14: S_cyan
 !! White
-URxvt*color7: S_base1
-URxvt*color15: S_base1
+URxvt.color7: S_base1
+URxvt.color15: S_base1
+
+! URxvt.colorBD: S_base1
+! URxvt.colorIT: S_orange
+! URxvt.colorUL: S_orange
+! colorBD colorIT colorUL colorRV
 
 ! Xorg
 !! Cursor
