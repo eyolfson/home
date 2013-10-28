@@ -68,16 +68,14 @@
     (kbd "m") (lambda () (interactive) (notmuch-mua-new-mail t)))
 (define-key notmuch-show-mode-map
     (kbd "d") (lambda () (interactive) (notmuch-show-tag "+deleted")))
-(setq
-    notmuch-show-logo nil
-    notmuch-fcc-dirs
-        '(("jeyolfso@uwaterloo.ca" . "jeyolfso@uwaterloo.ca/sent")))
+(setq notmuch-show-logo nil)
 
 ;;------------------------------------------------------------------------------
 ;; message
 ;;------------------------------------------------------------------------------
 (setq message-send-mail-function 'message-send-mail-with-sendmail)
 (setq sendmail-program "/usr/bin/msmtp")
+(setq message-sendmail-extra-arguments '("-a" "jon@eyolfson.com"))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
