@@ -66,6 +66,8 @@
 (require 'notmuch)
 (define-key notmuch-hello-mode-map
     (kbd "m") (lambda () (interactive) (notmuch-mua-new-mail t)))
+(define-key notmuch-show-mode-map
+    (kbd "d") (lambda () (interactive) (notmuch-show-tag "+deleted")))
 (setq
     notmuch-show-logo nil
     notmuch-fcc-dirs
