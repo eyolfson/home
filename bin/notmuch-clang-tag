@@ -1,1 +1,2 @@
-notmuch tag +clang -- to:cfe-commits@cs.uiuc.edu
+notmuch tag +clang -unread -inbox -- to:cfe-commits@cs.uiuc.edu tag:unread
+notmuch tag +clang -unread -inbox -- to:cfe-dev@cs.uiuc.edu tag:unread
