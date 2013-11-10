@@ -6,6 +6,7 @@ pythonfile = ~/.offlineimap.py
 [Account eyolfson@gmail.com]
 localrepository = eyolfson@gmail.com-local
 remoterepository = eyolfson@gmail.com-remote
+status_backend = sqlite
 
 [Repository eyolfson@gmail.com-local]
 type = Maildir

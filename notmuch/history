@@ -1,0 +1,9 @@
+notmuch tag +uwaterloo -inbox -- folder:jeyolfso@uwaterloo.ca to:tao_grads@ecemail.uwaterloo.ca
+notmuch tag +uwaterloo -inbox -- folder:jeyolfso@uwaterloo.ca to:gradinfo@ece.uwaterloo.ca
+notmuch tag +uwaterloo -inbox -- folder:jeyolfso@uwaterloo.ca to:gradstudies@lists.uwaterloo.ca
+notmuch tag +uwaterloo -inbox -- folder:jeyolfso@uwaterloo.ca to:eng_graduates@engmail.uwaterloo.ca
+notmuch tag +uwaterloo -inbox -- folder:jeyolfso@uwaterloo.ca to:phd@ecemail.uwaterloo.ca
+notmuch tag +uwaterloo -inbox -- folder:jeyolfso@uwaterloo.ca to:watform-seminars@lists.uwaterloo.ca
+notmuch tag +uwaterloo -inbox -- folder:jeyolfso@uwaterloo.ca to:uw-necsis-friends@lists.uwaterloo.ca
+notmuch tag +origin -inbox -- from:noreply@ea.com
+notmuch tag +mazda -inbox -- from:serviceco@kieswettermazda.com

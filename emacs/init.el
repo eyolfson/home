@@ -70,7 +70,8 @@
     (kbd "d") (lambda () (interactive) (notmuch-show-tag "+deleted")))
 (setq notmuch-show-logo nil
       notmuch-fcc-dirs '(("jeyolfso@uwaterloo.ca" . "jeyolfso@uwaterloo.ca/sent"))
-      notmuch-mua-user-agent-function nil)
+      notmuch-mua-user-agent-function nil
+      notmuch-search-oldest-first nil)
 
 ;;------------------------------------------------------------------------------
 ;; message
