@@ -7,3 +7,7 @@
 - Mute
 - mpd controls
 - Create .dzen/pipe
+
+# MacBook
+
+- notmuch hooks

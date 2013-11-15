@@ -28,11 +28,11 @@
 ! #define S_base3         #002b36
 
 ! Emacs
-Emacs.font: DejaVu Sans Mono-12
+Emacs.font: DejaVu Sans Mono-6
 Emacs.fontBackend: xft
 
 ! rxvt-unicode
-URxvt.font: xft:DejaVu Sans Mono-12
+URxvt.font: xft:DejaVu Sans Mono-6
 ! urxvt.boldFont: xft:DejaVu Serif-12
 URxvt.scrollBar: false
 URxvt.secondaryScroll: true
@@ -81,7 +81,13 @@ Xcursor.theme: Vanilla-DMZ
 Xcursor.size: 24
 
 !! Xft
-Xft.antialias:  true
-Xft.rgba:       rgb
-Xft.hinting:    true
-Xft.hintstyle:  hintfull
+!Xft.antialias:  true
+!Xft.rgba:       rgb
+!Xft.hinting:    true
+!Xft.hintstyle:  hintfull
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb

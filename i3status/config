@@ -8,7 +8,7 @@ general {
 
 order += "disk /"
 order += "wireless wlp3s0"
-order += "ethernet eth0"
+order += "ethernet ens9"
 order += "battery 0"
 order += "load"
 order += "tztime local"
@@ -18,7 +18,7 @@ wireless wlp3s0 {
   format_down = "W: down"
 }
 
-ethernet eth0 {
+ethernet ens9 {
   format_up = "E: %ip (%speed)"
   format_down = "E: down"
 }

@@ -1,2 +1,3 @@
+#!/bin/sh
 notmuch tag +clang -unread -inbox -- to:cfe-commits@cs.uiuc.edu tag:unread
 notmuch tag +clang -unread -inbox -- to:cfe-dev@cs.uiuc.edu tag:unread

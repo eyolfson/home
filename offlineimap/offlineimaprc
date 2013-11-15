@@ -2,11 +2,13 @@
 ui = basic
 accounts = eyolfson@gmail.com, jeyolfso@uwaterloo.ca, jon@eyolfson.com
 pythonfile = ~/.offlineimap.py
+maxsyncaccounts = 3
 
 [Account eyolfson@gmail.com]
 localrepository = eyolfson@gmail.com-local
 remoterepository = eyolfson@gmail.com-remote
 status_backend = sqlite
+maxconnections = 3
 
 [Repository eyolfson@gmail.com-local]
 type = Maildir
@@ -24,6 +26,7 @@ sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 [Account jeyolfso@uwaterloo.ca]
 localrepository = jeyolfso@uwaterloo.ca-local
 remoterepository = jeyolfso@uwaterloo.ca-remote
+maxconnections = 3
 
 [Repository jeyolfso@uwaterloo.ca-local]
 type = Maildir
@@ -42,6 +45,7 @@ sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 [Account jon@eyolfson.com]
 localrepository = jon@eyolfson.com-local
 remoterepository = jon@eyolfson.com-remote
+maxconnections = 3
 
 [Repository jon@eyolfson.com-local]
 type = Maildir
